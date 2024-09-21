@@ -17,15 +17,22 @@ namespace SistemaFarmacia
         private void label1_Click(object sender, EventArgs e)
         {
             //prueba
+            //prueba de paullllll
         }
 
         private void CrudUsuarios_Load(object sender, EventArgs e)
         {
+            
             string QryConsultarUsuarios = "Select * from tbl_usuarios";
             SqlDataAdapter adapter = new SqlDataAdapter(QryConsultarUsuarios, conn);
             DataTable dt = new DataTable();
             adapter.Fill(dt);
             dgviewUsuarios.DataSource = dt;
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }
