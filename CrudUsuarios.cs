@@ -21,7 +21,7 @@ namespace SistemaFarmacia
 
         private void CrudUsuarios_Load(object sender, EventArgs e)
         {
-            //hola
+            
             string QryConsultarUsuarios = "Select * from tbl_usuarios";
             SqlDataAdapter adapter = new SqlDataAdapter(QryConsultarUsuarios, conn);
             DataTable dt = new DataTable();
