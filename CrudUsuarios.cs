@@ -12,7 +12,6 @@ namespace SistemaFarmacia
         {
             InitializeComponent();
             conn = new SqlConnection("Data Source=LAPTOP-JC6HE824;Initial Catalog=Db_farmacia;Integrated Security=True;");
-            //Prueba
         }
 
         private void label1_Click(object sender, EventArgs e)
