@@ -16,8 +16,7 @@ namespace SistemaFarmacia
 
         private void label1_Click(object sender, EventArgs e)
         {
-            //prueba
-            //prueba de paullllll
+            
         }
 
         private void CrudUsuarios_Load(object sender, EventArgs e)
