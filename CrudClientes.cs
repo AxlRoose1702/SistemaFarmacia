@@ -11,22 +11,37 @@ using System.Windows.Forms;
 
 namespace SistemaFarmacia
 {
-    public partial class CrudProveedores : Form
+    public partial class CrudClientes : Form
     {
         private SqlConnection conn;
-        public CrudProveedores()
+        public CrudClientes()
         {
             InitializeComponent();
             conn = new SqlConnection("Data Source=LAPTOP-JC6HE824;Initial Catalog=Db_farmacia;Integrated Security=True;");
         }
 
-        private void CrudProveedores_Load(object sender, EventArgs e)
+        private void dtpfecha_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgviewClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CrudClientes_Load(object sender, EventArgs e)
         {
             string QryConsultarUsuarios = "Select * from tbl_usuarios";
             SqlDataAdapter adapter = new SqlDataAdapter(QryConsultarUsuarios, conn);
             DataTable dt = new DataTable();
             adapter.Fill(dt);
-            dgviewProveedores.DataSource = dt;
+            dgviewClientes.DataSource = dt;
         }
     }
 }
