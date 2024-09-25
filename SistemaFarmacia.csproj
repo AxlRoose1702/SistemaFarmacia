@@ -47,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CrudCategorias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CrudCategorias.Designer.cs">
+      <DependentUpon>CrudCategorias.cs</DependentUpon>
+    </Compile>
     <Compile Include="CrudUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +79,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CrudCategorias.resx">
+      <DependentUpon>CrudCategorias.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CrudClientes.resx">
       <DependentUpon>CrudClientes.cs</DependentUpon>
     </EmbeddedResource>
