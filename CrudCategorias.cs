@@ -17,7 +17,8 @@ namespace SistemaFarmacia
         public CrudCategorias()
         {
             InitializeComponent();
-            conn = new SqlConnection("Data Source=LAPTOP-JC6HE824;Initial Catalog=Db_farmacia;Integrated Security=True;");
+            //conn = new SqlConnection("Data Source=LAPTOP-JC6HE824;Initial Catalog=Db_farmacia;Integrated Security=True;");
+            conn = new SqlConnection("server=DESKTOP-QDTQ6AS\\SQLEXPRESS; database=Db_farmacia; integrated security=true");
         }
 
         private void txtCodigoCategoria_TextChanged(object sender, EventArgs e)
