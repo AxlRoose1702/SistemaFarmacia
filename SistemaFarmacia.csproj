@@ -47,11 +47,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CrudCategorias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CrudCategorias.Designer.cs">
+      <DependentUpon>CrudCategorias.cs</DependentUpon>
+    </Compile>
     <Compile Include="CrudUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CrudUsuarios.Designer.cs">
       <DependentUpon>CrudUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CrudProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CrudProveedores.Designer.cs">
+      <DependentUpon>CrudProveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CrudClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CrudClientes.Designer.cs">
+      <DependentUpon>CrudClientes.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -61,6 +79,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CrudCategorias.resx">
+      <DependentUpon>CrudCategorias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrudClientes.resx">
+      <DependentUpon>CrudClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrudProveedores.resx">
+      <DependentUpon>CrudProveedores.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CrudUsuarios.resx">
       <DependentUpon>CrudUsuarios.cs</DependentUpon>
     </EmbeddedResource>
