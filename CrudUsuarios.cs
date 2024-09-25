@@ -11,7 +11,8 @@ namespace SistemaFarmacia
         public CrudUsuarios()
         {
             InitializeComponent();
-            conn = new SqlConnection("Data Source=LAPTOP-JC6HE824;Initial Catalog=Db_farmacia;Integrated Security=True;");
+            //conn = new SqlConnection("Data Source=LAPTOP-JC6HE824;Initial Catalog=Db_farmacia;Integrated Security=True;");
+            conn = new SqlConnection("server=DESKTOP-QDTQ6AS\\SQLEXPRESS; database=Db_farmacia; integrated security=true");
         }
 
         private void label1_Click(object sender, EventArgs e)
