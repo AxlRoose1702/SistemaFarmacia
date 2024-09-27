@@ -48,6 +48,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgviewUsuarios)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -76,26 +77,28 @@
             // date
             // 
             this.date.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.date.Location = new System.Drawing.Point(922, 29);
+            this.date.Location = new System.Drawing.Point(6, 580);
             this.date.Name = "date";
-            this.date.Size = new System.Drawing.Size(141, 22);
+            this.date.Size = new System.Drawing.Size(286, 22);
             this.date.TabIndex = 13;
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.comboEstado);
             this.groupBox1.Controls.Add(this.txtEmail);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.txtPassword);
             this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.date);
             this.groupBox1.Controls.Add(this.txtUsuario);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txtCodigoUsuario);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(26, 64);
+            this.groupBox1.Location = new System.Drawing.Point(26, 29);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(421, 514);
+            this.groupBox1.Size = new System.Drawing.Size(421, 623);
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
@@ -256,6 +259,16 @@
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(6, 520);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(93, 32);
+            this.label7.TabIndex = 22;
+            this.label7.Text = "Fecha";
+            // 
             // CrudUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -268,7 +281,6 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtBusqueda);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.date);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgviewUsuarios);
             this.Name = "CrudUsuarios";
@@ -304,6 +316,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Label label7;
     }
 }
 
