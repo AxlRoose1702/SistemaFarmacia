@@ -47,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CrudDetalleVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CrudDetalleVentas.Designer.cs">
+      <DependentUpon>CrudDetalleVentas.cs</DependentUpon>
+    </Compile>
     <Compile Include="CrudUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>

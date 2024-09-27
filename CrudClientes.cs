@@ -17,8 +17,8 @@ namespace SistemaFarmacia
         public CrudClientes()
         {
             InitializeComponent();
-            //conn = new SqlConnection("Data Source=LAPTOP-JC6HE824;Initial Catalog=Db_farmacia;Integrated Security=True;");
-            conn = new SqlConnection("server=DESKTOP-QDTQ6AS\\SQLEXPRESS; database=Db_farmacia; integrated security=true");
+            conn = new SqlConnection("Data Source=LAPTOP-JC6HE824;Initial Catalog=Db_farmacia;Integrated Security=True;");
+            //conn = new SqlConnection("server=DESKTOP-QDTQ6AS\\SQLEXPRESS; database=Db_farmacia; integrated security=true");
         }
 
         private void dtpfecha_ValueChanged(object sender, EventArgs e)
@@ -38,8 +38,8 @@ namespace SistemaFarmacia
 
         private void CrudClientes_Load(object sender, EventArgs e)
         {
-            string QryConsultarUsuarios = "Select * from tbl_usuarios";
-            SqlDataAdapter adapter = new SqlDataAdapter(QryConsultarUsuarios, conn);
+            string QryConsultarClientes = "Select * from tbl_clientes";
+            SqlDataAdapter adapter = new SqlDataAdapter(QryConsultarClientes, conn);
             DataTable dt = new DataTable();
             adapter.Fill(dt);
             dgviewClientes.DataSource = dt;
