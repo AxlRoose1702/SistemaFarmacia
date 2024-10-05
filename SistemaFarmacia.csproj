@@ -47,11 +47,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CrudMedicamentos.cs">
+    <Compile Include="Categorias.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CrudMedicamentos.Designer.cs">
-      <DependentUpon>CrudMedicamentos.cs</DependentUpon>
+    <Compile Include="Categorias.Designer.cs">
+      <DependentUpon>Categorias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CrudDetalleVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CrudDetalleVentas.Designer.cs">
+      <DependentUpon>CrudDetalleVentas.cs</DependentUpon>
     </Compile>
     <Compile Include="CrudUsuarios.cs">
       <SubType>Form</SubType>
@@ -71,12 +77,6 @@
     <Compile Include="CrudClientes.Designer.cs">
       <DependentUpon>CrudClientes.cs</DependentUpon>
     </Compile>
-    <Compile Include="CrudVentas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CrudVentas.Designer.cs">
-      <DependentUpon>CrudVentas.cs</DependentUpon>
-    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,14 +85,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="CrudMedicamentos.resx">
-      <DependentUpon>CrudMedicamentos.cs</DependentUpon>
+    <EmbeddedResource Include="Categorias.resx">
+      <DependentUpon>Categorias.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CrudUsuarios.resx">
       <DependentUpon>CrudUsuarios.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CrudVentas.resx">
-      <DependentUpon>CrudVentas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

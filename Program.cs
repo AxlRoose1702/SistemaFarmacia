@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SistemaFarmacia
@@ -16,10 +13,6 @@ namespace SistemaFarmacia
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CrudCategorias());
-            Application.Run(new CrudClientes());
-            Application.Run(new CrudProveedores());
-            Application.Run(new CrudUsuarios());
             Application.Run(new Login());
         }
     }

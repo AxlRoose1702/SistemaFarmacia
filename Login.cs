@@ -43,5 +43,10 @@ namespace SistemaFarmacia
             }
             conn.Close();
         }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
