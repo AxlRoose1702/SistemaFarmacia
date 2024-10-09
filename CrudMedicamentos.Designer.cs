@@ -220,7 +220,7 @@
             this.dateVencimiento.Location = new System.Drawing.Point(6, 580);
             this.dateVencimiento.Name = "dateVencimiento";
             this.dateVencimiento.Size = new System.Drawing.Size(286, 22);
-            this.dateVencimiento.TabIndex = 13;
+            this.dateVencimiento.TabIndex = 25;
             // 
             // txtDescripcion
             // 
