@@ -29,15 +29,23 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtCodProveedor = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtCodCategorias = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.dateIngreso = new System.Windows.Forms.DateTimePicker();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtStock = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.comboMEDIDA = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtCodigoU = new System.Windows.Forms.TextBox();
+            this.txtPrecio = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.dateTimeVenncimiento = new System.Windows.Forms.DateTimePicker();
-            this.txtCodigoC = new System.Windows.Forms.TextBox();
+            this.dateVencimiento = new System.Windows.Forms.DateTimePicker();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtCodigoV = new System.Windows.Forms.TextBox();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
@@ -46,44 +54,113 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.txtBusqueda = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.dgviewVentas = new System.Windows.Forms.DataGridView();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.dateTimeIngreso = new System.Windows.Forms.DateTimePicker();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.dgvMedicamentos = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgviewVentas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMedicamentos)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.txtCodProveedor);
             this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.txtCodCategorias);
             this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.dateTimeIngreso);
+            this.groupBox1.Controls.Add(this.dateIngreso);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtStock);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.comboMEDIDA);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.txtCodigoU);
+            this.groupBox1.Controls.Add(this.txtPrecio);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.dateTimeVenncimiento);
-            this.groupBox1.Controls.Add(this.txtCodigoC);
+            this.groupBox1.Controls.Add(this.dateVencimiento);
+            this.groupBox1.Controls.Add(this.txtDescripcion);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.txtCodigoV);
+            this.groupBox1.Controls.Add(this.txtCodigo);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(41, 20);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(421, 623);
             this.groupBox1.TabIndex = 55;
             this.groupBox1.TabStop = false;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(15, 411);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(279, 32);
+            this.label9.TabIndex = 30;
+            this.label9.Text = "Código de proveedor";
+            // 
+            // txtCodProveedor
+            // 
+            this.txtCodProveedor.BackColor = System.Drawing.SystemColors.Window;
+            this.txtCodProveedor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCodProveedor.Location = new System.Drawing.Point(15, 446);
+            this.txtCodProveedor.Name = "txtCodProveedor";
+            this.txtCodProveedor.Size = new System.Drawing.Size(280, 22);
+            this.txtCodProveedor.TabIndex = 29;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(9, 339);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(289, 32);
+            this.label10.TabIndex = 28;
+            this.label10.Text = "Codigo de Categorías";
+            // 
+            // txtCodCategorias
+            // 
+            this.txtCodCategorias.BackColor = System.Drawing.SystemColors.Window;
+            this.txtCodCategorias.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCodCategorias.Location = new System.Drawing.Point(11, 386);
+            this.txtCodCategorias.Name = "txtCodCategorias";
+            this.txtCodCategorias.Size = new System.Drawing.Size(280, 22);
+            this.txtCodCategorias.TabIndex = 27;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(6, 485);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(194, 32);
+            this.label8.TabIndex = 26;
+            this.label8.Text = "Fecha Ingreso";
+            // 
+            // dateIngreso
+            // 
+            this.dateIngreso.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateIngreso.Location = new System.Drawing.Point(0, 520);
+            this.dateIngreso.Name = "dateIngreso";
+            this.dateIngreso.Size = new System.Drawing.Size(286, 22);
+            this.dateIngreso.TabIndex = 25;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(14, 279);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(85, 32);
+            this.label6.TabIndex = 24;
+            this.label6.Text = "Stock";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
+            // 
+            // txtStock
+            // 
+            this.txtStock.BackColor = System.Drawing.SystemColors.Window;
+            this.txtStock.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtStock.Location = new System.Drawing.Point(14, 314);
+            this.txtStock.Name = "txtStock";
+            this.txtStock.Size = new System.Drawing.Size(280, 22);
+            this.txtStock.TabIndex = 23;
+            this.txtStock.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label7
             // 
@@ -99,9 +176,8 @@
             // 
             this.comboMEDIDA.FormattingEnabled = true;
             this.comboMEDIDA.Items.AddRange(new object[] {
-            "Efectivo",
-            "Tarjeta",
-            "Transferencia"});
+            "tabletas",
+            "capsulas"});
             this.comboMEDIDA.Location = new System.Drawing.Point(6, 186);
             this.comboMEDIDA.Name = "comboMEDIDA";
             this.comboMEDIDA.Size = new System.Drawing.Size(286, 24);
@@ -118,15 +194,15 @@
             this.label5.Text = "Precio";
             this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
-            // txtCodigoU
+            // txtPrecio
             // 
-            this.txtCodigoU.BackColor = System.Drawing.SystemColors.Window;
-            this.txtCodigoU.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCodigoU.Location = new System.Drawing.Point(10, 254);
-            this.txtCodigoU.Name = "txtCodigoU";
-            this.txtCodigoU.Size = new System.Drawing.Size(280, 22);
-            this.txtCodigoU.TabIndex = 18;
-            this.txtCodigoU.TextChanged += new System.EventHandler(this.txtCodigoU_TextChanged);
+            this.txtPrecio.BackColor = System.Drawing.SystemColors.Window;
+            this.txtPrecio.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPrecio.Location = new System.Drawing.Point(10, 254);
+            this.txtPrecio.Name = "txtPrecio";
+            this.txtPrecio.Size = new System.Drawing.Size(280, 22);
+            this.txtPrecio.TabIndex = 18;
+            this.txtPrecio.TextChanged += new System.EventHandler(this.txtCodigoU_TextChanged);
             // 
             // label4
             // 
@@ -138,23 +214,23 @@
             this.label4.TabIndex = 17;
             this.label4.Text = "Unidad de Medida";
             // 
-            // dateTimeVenncimiento
+            // dateVencimiento
             // 
-            this.dateTimeVenncimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimeVenncimiento.Location = new System.Drawing.Point(6, 580);
-            this.dateTimeVenncimiento.Name = "dateTimeVenncimiento";
-            this.dateTimeVenncimiento.Size = new System.Drawing.Size(286, 22);
-            this.dateTimeVenncimiento.TabIndex = 13;
+            this.dateVencimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateVencimiento.Location = new System.Drawing.Point(6, 580);
+            this.dateVencimiento.Name = "dateVencimiento";
+            this.dateVencimiento.Size = new System.Drawing.Size(286, 22);
+            this.dateVencimiento.TabIndex = 13;
             // 
-            // txtCodigoC
+            // txtDescripcion
             // 
-            this.txtCodigoC.AcceptsReturn = true;
-            this.txtCodigoC.BackColor = System.Drawing.SystemColors.Window;
-            this.txtCodigoC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCodigoC.Location = new System.Drawing.Point(12, 126);
-            this.txtCodigoC.Name = "txtCodigoC";
-            this.txtCodigoC.Size = new System.Drawing.Size(280, 22);
-            this.txtCodigoC.TabIndex = 16;
+            this.txtDescripcion.AcceptsReturn = true;
+            this.txtDescripcion.BackColor = System.Drawing.SystemColors.Window;
+            this.txtDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDescripcion.Location = new System.Drawing.Point(12, 126);
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(280, 22);
+            this.txtDescripcion.TabIndex = 16;
             // 
             // label3
             // 
@@ -166,14 +242,15 @@
             this.label3.TabIndex = 15;
             this.label3.Text = "Descripción";
             // 
-            // txtCodigoV
+            // txtCodigo
             // 
-            this.txtCodigoV.BackColor = System.Drawing.SystemColors.Window;
-            this.txtCodigoV.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCodigoV.Location = new System.Drawing.Point(12, 60);
-            this.txtCodigoV.Name = "txtCodigoV";
-            this.txtCodigoV.Size = new System.Drawing.Size(280, 22);
-            this.txtCodigoV.TabIndex = 14;
+            this.txtCodigo.BackColor = System.Drawing.SystemColors.Window;
+            this.txtCodigo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCodigo.Enabled = false;
+            this.txtCodigo.Location = new System.Drawing.Point(12, 60);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.Size = new System.Drawing.Size(280, 22);
+            this.txtCodigo.TabIndex = 14;
             // 
             // label2
             // 
@@ -214,6 +291,7 @@
             this.btnGuardar.TabIndex = 52;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnCancelar
             // 
@@ -250,96 +328,19 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(534, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(231, 32);
+            this.label1.Size = new System.Drawing.Size(346, 32);
             this.label1.TabIndex = 48;
-            this.label1.Text = "DATOS VENTAS";
+            this.label1.Text = "DATOS MEDICAMENTOS";
             // 
-            // dgviewVentas
+            // dgvMedicamentos
             // 
-            this.dgviewVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgviewVentas.Location = new System.Drawing.Point(558, 154);
-            this.dgviewVentas.Name = "dgviewVentas";
-            this.dgviewVentas.RowHeadersWidth = 51;
-            this.dgviewVentas.RowTemplate.Height = 24;
-            this.dgviewVentas.Size = new System.Drawing.Size(766, 391);
-            this.dgviewVentas.TabIndex = 47;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(14, 279);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(85, 32);
-            this.label6.TabIndex = 24;
-            this.label6.Text = "Stock";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Location = new System.Drawing.Point(14, 314);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(280, 22);
-            this.textBox1.TabIndex = 23;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(6, 485);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(194, 32);
-            this.label8.TabIndex = 26;
-            this.label8.Text = "Fecha Ingreso";
-            // 
-            // dateTimeIngreso
-            // 
-            this.dateTimeIngreso.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimeIngreso.Location = new System.Drawing.Point(0, 520);
-            this.dateTimeIngreso.Name = "dateTimeIngreso";
-            this.dateTimeIngreso.Size = new System.Drawing.Size(286, 22);
-            this.dateTimeIngreso.TabIndex = 25;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(15, 411);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(279, 32);
-            this.label9.TabIndex = 30;
-            this.label9.Text = "Código de proveedor";
-            // 
-            // textBox2
-            // 
-            this.textBox2.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Location = new System.Drawing.Point(15, 446);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(280, 22);
-            this.textBox2.TabIndex = 29;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(9, 339);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(289, 32);
-            this.label10.TabIndex = 28;
-            this.label10.Text = "Codigo de Categorías";
-            // 
-            // textBox3
-            // 
-            this.textBox3.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.Location = new System.Drawing.Point(11, 386);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(280, 22);
-            this.textBox3.TabIndex = 27;
+            this.dgvMedicamentos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMedicamentos.Location = new System.Drawing.Point(558, 154);
+            this.dgvMedicamentos.Name = "dgvMedicamentos";
+            this.dgvMedicamentos.RowHeadersWidth = 51;
+            this.dgvMedicamentos.RowTemplate.Height = 24;
+            this.dgvMedicamentos.Size = new System.Drawing.Size(766, 391);
+            this.dgvMedicamentos.TabIndex = 47;
             // 
             // CrudMedicamentos
             // 
@@ -354,13 +355,13 @@
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.txtBusqueda);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dgviewVentas);
+            this.Controls.Add(this.dgvMedicamentos);
             this.Name = "CrudMedicamentos";
             this.Text = "CrudMedicamentos";
             this.Load += new System.EventHandler(this.CrudMedicamentos_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgviewVentas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMedicamentos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -372,12 +373,12 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox comboMEDIDA;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtCodigoU;
+        private System.Windows.Forms.TextBox txtPrecio;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DateTimePicker dateTimeVenncimiento;
-        private System.Windows.Forms.TextBox txtCodigoC;
+        private System.Windows.Forms.DateTimePicker dateVencimiento;
+        private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtCodigoV;
+        private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnEditar;
@@ -386,14 +387,14 @@
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.TextBox txtBusqueda;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dgviewVentas;
+        private System.Windows.Forms.DataGridView dgvMedicamentos;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtStock;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.DateTimePicker dateTimeIngreso;
+        private System.Windows.Forms.DateTimePicker dateIngreso;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtCodProveedor;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtCodCategorias;
     }
 }
