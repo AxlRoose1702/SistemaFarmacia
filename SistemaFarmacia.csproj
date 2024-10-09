@@ -47,13 +47,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-      <Compile Include="CrudMedicamentos.cs">
+    <Compile Include="CrudMedicamentos.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CrudMedicamentos.Designer.cs">
       <DependentUpon>CrudMedicamentos.cs</DependentUpon>
     </Compile>
-        <Compile Include="CrudVentas.cs">
+    <Compile Include="CrudVentas.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CrudVentas.Designer.cs">
@@ -97,10 +97,13 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-        <EmbeddedResource Include="CrudMedicamentos.resx">
+    <EmbeddedResource Include="CrudDetalleVentas.resx">
+      <DependentUpon>CrudDetalleVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrudMedicamentos.resx">
       <DependentUpon>CrudMedicamentos.cs</DependentUpon>
     </EmbeddedResource>
-     <EmbeddedResource Include="CrudVentas.resx">
+    <EmbeddedResource Include="CrudVentas.resx">
       <DependentUpon>CrudVentas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Categorias.resx">
