@@ -90,12 +90,12 @@ namespace SistemaFarmacia
             cmd.Parameters.AddWithValue("@UnidadMedida", comboMEDIDA.Text);
             cmd.Parameters.AddWithValue("@Precio", txtPrecio.Text);
             cmd.Parameters.AddWithValue("@Stock", txtStock.Text);
-            cmd.Parameters.AddWithValue("@FechaIngreso", dateIngreso.Text);
-            cmd.Parameters.AddWithValue("@FechaVencimiento", dateVencimiento.Text);
+            cmd.Parameters.AddWithValue("@FechaIngreso", DateTime.Parse(dateIngreso.Text));
+            cmd.Parameters.AddWithValue("@FechaVencimiento", DateTime.Parse(dateVencimiento.Text));
             cmd.Parameters.AddWithValue("@CodigoCategoria", txtCodCategorias.Text);
             cmd.Parameters.AddWithValue("@CodigoProveedor", txtCodProveedor.Text);
-
             
+
             // VERIFICA SI SE AGREGARON FILAS
             cant = cmd.ExecuteNonQuery();
             if (cant > 0)
