@@ -103,6 +103,9 @@
     <EmbeddedResource Include="CrudMedicamentos.resx">
       <DependentUpon>CrudMedicamentos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CrudProveedores.resx">
+      <DependentUpon>CrudProveedores.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CrudVentas.resx">
       <DependentUpon>CrudVentas.cs</DependentUpon>
     </EmbeddedResource>

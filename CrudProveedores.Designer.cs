@@ -38,7 +38,11 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.cboxEstado = new System.Windows.Forms.ComboBox();
+            this.txtDireccion = new System.Windows.Forms.TextBox();
+            this.txtTEL = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtNIT = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -49,10 +53,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dgviewProveedores = new System.Windows.Forms.DataGridView();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtTEL = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textDireccion = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgviewProveedores)).BeginInit();
             this.SuspendLayout();
@@ -86,6 +86,7 @@
             this.btnGuardar.TabIndex = 35;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnCancelar
             // 
@@ -121,7 +122,7 @@
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.cboxEstado);
-            this.groupBox1.Controls.Add(this.textDireccion);
+            this.groupBox1.Controls.Add(this.txtDireccion);
             this.groupBox1.Controls.Add(this.txtTEL);
             this.groupBox1.Controls.Add(this.txtEmail);
             this.groupBox1.Controls.Add(this.label9);
@@ -171,6 +172,24 @@
             this.cboxEstado.Size = new System.Drawing.Size(286, 24);
             this.cboxEstado.TabIndex = 21;
             // 
+            // txtDireccion
+            // 
+            this.txtDireccion.BackColor = System.Drawing.SystemColors.Window;
+            this.txtDireccion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDireccion.Location = new System.Drawing.Point(12, 614);
+            this.txtDireccion.Name = "txtDireccion";
+            this.txtDireccion.Size = new System.Drawing.Size(280, 22);
+            this.txtDireccion.TabIndex = 20;
+            // 
+            // txtTEL
+            // 
+            this.txtTEL.BackColor = System.Drawing.SystemColors.Window;
+            this.txtTEL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtTEL.Location = new System.Drawing.Point(12, 498);
+            this.txtTEL.Name = "txtTEL";
+            this.txtTEL.Size = new System.Drawing.Size(280, 22);
+            this.txtTEL.TabIndex = 20;
+            // 
             // txtEmail
             // 
             this.txtEmail.BackColor = System.Drawing.SystemColors.Window;
@@ -179,6 +198,26 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(280, 22);
             this.txtEmail.TabIndex = 20;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(6, 546);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(133, 32);
+            this.label9.TabIndex = 19;
+            this.label9.Text = "Dirección";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(6, 430);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(126, 32);
+            this.label8.TabIndex = 19;
+            this.label8.Text = "Telefono";
             // 
             // label5
             // 
@@ -275,44 +314,6 @@
             this.dgviewProveedores.Size = new System.Drawing.Size(772, 693);
             this.dgviewProveedores.TabIndex = 29;
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(6, 430);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(126, 32);
-            this.label8.TabIndex = 19;
-            this.label8.Text = "Telefono";
-            // 
-            // txtTEL
-            // 
-            this.txtTEL.BackColor = System.Drawing.SystemColors.Window;
-            this.txtTEL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtTEL.Location = new System.Drawing.Point(12, 498);
-            this.txtTEL.Name = "txtTEL";
-            this.txtTEL.Size = new System.Drawing.Size(280, 22);
-            this.txtTEL.TabIndex = 20;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(6, 546);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(133, 32);
-            this.label9.TabIndex = 19;
-            this.label9.Text = "Dirección";
-            // 
-            // textDireccion
-            // 
-            this.textDireccion.BackColor = System.Drawing.SystemColors.Window;
-            this.textDireccion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textDireccion.Location = new System.Drawing.Point(12, 614);
-            this.textDireccion.Name = "textDireccion";
-            this.textDireccion.Size = new System.Drawing.Size(280, 22);
-            this.textDireccion.TabIndex = 20;
-            // 
             // CrudProveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -361,7 +362,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgviewProveedores;
-        private System.Windows.Forms.TextBox textDireccion;
+        private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.TextBox txtTEL;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
