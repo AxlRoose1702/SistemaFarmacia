@@ -38,7 +38,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.comboPrecio = new System.Windows.Forms.ComboBox();
+            this.comboEstado = new System.Windows.Forms.ComboBox();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
@@ -78,6 +78,7 @@
             this.btnGuardar.TabIndex = 42;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnCancelar
             // 
@@ -131,7 +132,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.comboPrecio);
+            this.groupBox1.Controls.Add(this.comboEstado);
             this.groupBox1.Controls.Add(this.txtDescripcion);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.txtNombre);
@@ -154,16 +155,16 @@
             this.label6.TabIndex = 22;
             this.label6.Text = "Estado";
             // 
-            // comboPrecio
+            // comboEstado
             // 
-            this.comboPrecio.FormattingEnabled = true;
-            this.comboPrecio.Items.AddRange(new object[] {
+            this.comboEstado.FormattingEnabled = true;
+            this.comboEstado.Items.AddRange(new object[] {
             "ACTIVO",
             "INACTIVO"});
-            this.comboPrecio.Location = new System.Drawing.Point(12, 277);
-            this.comboPrecio.Name = "comboPrecio";
-            this.comboPrecio.Size = new System.Drawing.Size(286, 24);
-            this.comboPrecio.TabIndex = 21;
+            this.comboEstado.Location = new System.Drawing.Point(12, 277);
+            this.comboEstado.Name = "comboEstado";
+            this.comboEstado.Size = new System.Drawing.Size(286, 24);
+            this.comboEstado.TabIndex = 21;
             // 
             // txtDescripcion
             // 
@@ -259,7 +260,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboPrecio;
+        private System.Windows.Forms.ComboBox comboEstado;
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtNombre;

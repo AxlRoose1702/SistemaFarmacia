@@ -22,5 +22,23 @@ namespace SistemaFarmacia
             adapter.Fill(dt);
             dgviewCategoria.DataSource = dt;
         }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            string QryAgregarCategoria = "Insert into tbl_categorias (Nombre, Descripcion, Estado) values (@Nombre, @Descripcion, @Estado)";
+            SqlCommand cmd = new SqlCommand(QryAgregarCategoria, conn);
+            cmd.Parameters.AddWithValue("@Nombre", txtNombre.Text);
+            cmd.Parameters.AddWithValue("@Descripcion", txtDescripcion.Text);
+            cmd.Parameters.AddWithValue("@Estado", comboEstado.Text);
+
+            conn.Open();
+            int cant = cmd.ExecuteNonQuery();
+
+            if (cant > 0)
+            {
+                MessageBox.Show("Se ha insertado los datos correctamente", "¡Datos Guardados!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+        }
     }
 }
