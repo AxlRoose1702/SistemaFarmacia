@@ -10,8 +10,12 @@ namespace SistemaFarmacia
         private SqlConnection conn;
         public Categorias()
         {
+            // CONEXIONES A BASE DE DATOS (3 VERSIONES)
             InitializeComponent();
-            conn = new SqlConnection("Data Source=LAPTOP-JC6HE824;Initial Catalog=Db_farmacia;Integrated Security=True;");
+            //conn = new SqlConnection("Data Source=LAPTOP-JC6HE824;Initial Catalog=Db_farmacia;Integrated Security=True;");
+            conn = new SqlConnection("Data Source=GODLECH\\SQLEXPRESS;Initial Catalog=Db_farmacia;Integrated Security=True;");
+            //conn = new SqlConnection("server=DESKTOP-QDTQ6AS\\SQLEXPRESS; database=Db_farmacia; integrated security=true");
+
         }
 
         private void Categorias_Load(object sender, EventArgs e)
@@ -37,7 +41,27 @@ namespace SistemaFarmacia
             if (cant > 0)
             {
                 MessageBox.Show("Se ha insertado los datos correctamente", "¡Datos Guardados!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                //DEJAMOS EN BLANCO TODAS LAS CASILLAS
+                txtNombre.Text = "";
+                txtDescripcion.Text = "";
+                comboEstado.Text = "";
+                
+                // MODIFICAR SEGUN CRUD UTILIZADO
+                string QryConsultarCategorias = "Select * from tbl_categorias";
+                SqlDataAdapter adapter = new SqlDataAdapter(QryConsultarCategorias, conn);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+                dgviewCategoria.DataSource = dt;
+
             }
+            else
+            {
+                MessageBox.Show("No se agregó registro!!!", "Advertencia!!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+            // Cerrar la conexión
+            conn.Close();
 
         }
     }
