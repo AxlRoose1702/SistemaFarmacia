@@ -97,6 +97,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CrudClientes.resx">
+      <DependentUpon>CrudClientes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CrudDetalleVentas.resx">
       <DependentUpon>CrudDetalleVentas.cs</DependentUpon>
     </EmbeddedResource>

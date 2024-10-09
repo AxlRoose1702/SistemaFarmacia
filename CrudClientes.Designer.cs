@@ -36,13 +36,13 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.cboxEstado = new System.Windows.Forms.ComboBox();
-            this.textDireccion = new System.Windows.Forms.TextBox();
+            this.txtDireccion = new System.Windows.Forms.TextBox();
             this.txtTEL = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.txtNIT = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.dtpfecha = new System.Windows.Forms.DateTimePicker();
+            this.dateFecha = new System.Windows.Forms.DateTimePicker();
             this.txtCliente = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtCodigoCliente = new System.Windows.Forms.TextBox();
@@ -84,6 +84,7 @@
             this.btnGuardar.TabIndex = 41;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnCancelar
             // 
@@ -100,13 +101,13 @@
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.cboxEstado);
-            this.groupBox1.Controls.Add(this.textDireccion);
+            this.groupBox1.Controls.Add(this.txtDireccion);
             this.groupBox1.Controls.Add(this.txtTEL);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.txtNIT);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.dtpfecha);
+            this.groupBox1.Controls.Add(this.dateFecha);
             this.groupBox1.Controls.Add(this.txtCliente);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txtCodigoCliente);
@@ -149,14 +150,14 @@
             this.cboxEstado.Size = new System.Drawing.Size(280, 24);
             this.cboxEstado.TabIndex = 21;
             // 
-            // textDireccion
+            // txtDireccion
             // 
-            this.textDireccion.BackColor = System.Drawing.SystemColors.Window;
-            this.textDireccion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textDireccion.Location = new System.Drawing.Point(12, 496);
-            this.textDireccion.Name = "textDireccion";
-            this.textDireccion.Size = new System.Drawing.Size(280, 22);
-            this.textDireccion.TabIndex = 20;
+            this.txtDireccion.BackColor = System.Drawing.SystemColors.Window;
+            this.txtDireccion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDireccion.Location = new System.Drawing.Point(12, 496);
+            this.txtDireccion.Name = "txtDireccion";
+            this.txtDireccion.Size = new System.Drawing.Size(280, 22);
+            this.txtDireccion.TabIndex = 20;
             // 
             // txtTEL
             // 
@@ -206,14 +207,14 @@
             this.label4.TabIndex = 17;
             this.label4.Text = "NIT";
             // 
-            // dtpfecha
+            // dateFecha
             // 
-            this.dtpfecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpfecha.Location = new System.Drawing.Point(12, 710);
-            this.dtpfecha.Name = "dtpfecha";
-            this.dtpfecha.Size = new System.Drawing.Size(280, 22);
-            this.dtpfecha.TabIndex = 13;
-            this.dtpfecha.ValueChanged += new System.EventHandler(this.dtpfecha_ValueChanged);
+            this.dateFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateFecha.Location = new System.Drawing.Point(12, 710);
+            this.dateFecha.Name = "dateFecha";
+            this.dateFecha.Size = new System.Drawing.Size(280, 22);
+            this.dateFecha.TabIndex = 13;
+            this.dateFecha.ValueChanged += new System.EventHandler(this.dtpfecha_ValueChanged);
             // 
             // txtCliente
             // 
@@ -240,6 +241,7 @@
             this.txtCodigoCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCodigoCliente.Location = new System.Drawing.Point(12, 72);
             this.txtCodigoCliente.Name = "txtCodigoCliente";
+            this.txtCodigoCliente.ReadOnly = true;
             this.txtCodigoCliente.Size = new System.Drawing.Size(280, 22);
             this.txtCodigoCliente.TabIndex = 14;
             // 
@@ -260,7 +262,7 @@
             this.dgviewClientes.Name = "dgviewClientes";
             this.dgviewClientes.RowHeadersWidth = 51;
             this.dgviewClientes.RowTemplate.Height = 24;
-            this.dgviewClientes.Size = new System.Drawing.Size(845, 622);
+            this.dgviewClientes.Size = new System.Drawing.Size(1054, 622);
             this.dgviewClientes.TabIndex = 38;
             this.dgviewClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgviewClientes_CellContentClick);
             // 
@@ -297,7 +299,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1386, 792);
+            this.ClientSize = new System.Drawing.Size(1619, 792);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.txtBusqueda);
             this.Controls.Add(this.label1);
@@ -328,13 +330,13 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cboxEstado;
-        private System.Windows.Forms.TextBox textDireccion;
+        private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.TextBox txtTEL;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtNIT;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DateTimePicker dtpfecha;
+        private System.Windows.Forms.DateTimePicker dateFecha;
         private System.Windows.Forms.TextBox txtCliente;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtCodigoCliente;
