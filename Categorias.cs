@@ -29,39 +29,55 @@ namespace SistemaFarmacia
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            string QryAgregarCategoria = "Insert into tbl_categorias (Nombre, Descripcion, Estado) values (@Nombre, @Descripcion, @Estado)";
-            SqlCommand cmd = new SqlCommand(QryAgregarCategoria, conn);
-            cmd.Parameters.AddWithValue("@Nombre", txtNombre.Text);
-            cmd.Parameters.AddWithValue("@Descripcion", txtDescripcion.Text);
-            cmd.Parameters.AddWithValue("@Estado", comboEstado.Text);
-
-            conn.Open();
-            int cant = cmd.ExecuteNonQuery();
-
-            if (cant > 0)
+            if (string.IsNullOrEmpty(txtDescripcion.Text) || string.IsNullOrEmpty(txtNombre.Text))
             {
-                MessageBox.Show("Se ha insertado los datos correctamente", "¡Datos Guardados!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //Datos vacios
+                lblERROR.Text = "HAY DATOS \nVACIOS";
 
-                //DEJAMOS EN BLANCO TODAS LAS CASILLAS
-                txtNombre.Text = "";
-                txtDescripcion.Text = "";
-                comboEstado.Text = "";
-                
-                // MODIFICAR SEGUN CRUD UTILIZADO
-                string QryConsultarCategorias = "Select * from tbl_categorias";
-                SqlDataAdapter adapter = new SqlDataAdapter(QryConsultarCategorias, conn);
-                DataTable dt = new DataTable();
-                adapter.Fill(dt);
-                dgviewCategoria.DataSource = dt;
+            }
+            else if (comboEstado.Text != "ACTIVO" && comboEstado.Text != "INACTIVO")
+            {
 
+                //Dato no seleccionado
+                lblERROR.Text = "   Hay datos \n sin seleccionar";
             }
             else
             {
-                MessageBox.Show("No se agregó registro!!!", "Advertencia!!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+                string QryAgregarCategoria = "Insert into tbl_categorias (Nombre, Descripcion, Estado) values (@Nombre, @Descripcion, @Estado)";
+                SqlCommand cmd = new SqlCommand(QryAgregarCategoria, conn);
+                cmd.Parameters.AddWithValue("@Nombre", txtNombre.Text);
+                cmd.Parameters.AddWithValue("@Descripcion", txtDescripcion.Text);
+                cmd.Parameters.AddWithValue("@Estado", comboEstado.Text);
 
-            // Cerrar la conexión
-            conn.Close();
+                conn.Open();
+                int cant = cmd.ExecuteNonQuery();
+
+                if (cant > 0)
+                {
+                    MessageBox.Show("Se ha insertado los datos correctamente", "¡Datos Guardados!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    //DEJAMOS EN BLANCO TODAS LAS CASILLAS
+                    txtNombre.Text = "";
+                    txtDescripcion.Text = "";
+                    comboEstado.Text = "";
+                    lblERROR.Text = "";
+
+                    // MODIFICAR SEGUN CRUD UTILIZADO
+                    string QryConsultarCategorias = "Select * from tbl_categorias";
+                    SqlDataAdapter adapter = new SqlDataAdapter(QryConsultarCategorias, conn);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+                    dgviewCategoria.DataSource = dt;
+
+                }
+                else
+                {
+                    MessageBox.Show("No se agregó registro!!!", "Advertencia!!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+
+                // Cerrar la conexión
+                conn.Close();
+            }
 
         }
     }
