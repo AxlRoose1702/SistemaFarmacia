@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace SistemaFarmacia
 {
@@ -21,7 +22,7 @@ namespace SistemaFarmacia
             //conn = new SqlConnection("Data Source=LAPTOP-JC6HE824;Initial Catalog=Db_farmacia;Integrated Security=True;");
             conn = new SqlConnection("Data Source=GODLECH\\SQLEXPRESS;Initial Catalog=Db_farmacia;Integrated Security=True;");
             //conn = new SqlConnection("server=DESKTOP-QDTQ6AS\\SQLEXPRESS; database=Db_farmacia; integrated security=true");
-
+            comboPAGO.Text = "Seleccionar";
         }
 
         private void CrudVentas_Load(object sender, EventArgs e)
@@ -35,6 +36,20 @@ namespace SistemaFarmacia
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+
+            if (string.IsNullOrEmpty(txtCodigoC.Text) || string.IsNullOrEmpty(txtCodigoU.Text))
+            {
+                //Datos vacios
+                lblERROR.Text = "HAY DATOS\n VACIOS";
+
+            } else if (comboPAGO.Text != "Efectivo" && comboPAGO.Text != "Transferencia" && comboPAGO.Text != "Tarjeta") { 
+
+                //Dato no seleccionado
+                lblERROR.Text = "   Hay datos \n sin seleccionar";
+            }
+            else
+            { 
+
             //SE ABRE LA CONEXIÓN SQL
             int cant = 0;
             conn.Open();
@@ -75,6 +90,7 @@ namespace SistemaFarmacia
 
             // Cerrar la conexión
             conn.Close();
+        }
         }
     }
 }
