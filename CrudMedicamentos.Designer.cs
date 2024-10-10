@@ -55,6 +55,7 @@
             this.txtBusqueda = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvMedicamentos = new System.Windows.Forms.DataGridView();
+            this.lblERROR = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMedicamentos)).BeginInit();
             this.SuspendLayout();
@@ -342,11 +343,22 @@
             this.dgvMedicamentos.Size = new System.Drawing.Size(766, 391);
             this.dgvMedicamentos.TabIndex = 47;
             // 
+            // lblERROR
+            // 
+            this.lblERROR.AutoSize = true;
+            this.lblERROR.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblERROR.ForeColor = System.Drawing.Color.Red;
+            this.lblERROR.Location = new System.Drawing.Point(1071, 20);
+            this.lblERROR.Name = "lblERROR";
+            this.lblERROR.Size = new System.Drawing.Size(0, 32);
+            this.lblERROR.TabIndex = 56;
+            // 
             // CrudMedicamentos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1365, 663);
+            this.Controls.Add(this.lblERROR);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnEditar);
@@ -396,5 +408,6 @@
         private System.Windows.Forms.TextBox txtCodProveedor;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtCodCategorias;
+        private System.Windows.Forms.Label lblERROR;
     }
 }

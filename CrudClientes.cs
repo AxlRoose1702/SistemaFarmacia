@@ -44,50 +44,68 @@ namespace SistemaFarmacia
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            //SE ABRE LA CONEXIÓN SQL
-            int cant = 0;
-            conn.Open();
 
-            //SE MODIFICA SEGUN DATOS DE LA BASE DE DATOS Y [DISEÑO]
-            string QryAgregarClientes = "Insert into tbl_clientes (Nombre, Nit, Telefono, Direccion, FechaCreacion, Estado) values (@Nombre, @Nit, @Telefono, @Direccion, @FechaCreacion, @Estado)";
-            SqlCommand cmd = new SqlCommand(QryAgregarClientes, conn);
-            cmd.Parameters.AddWithValue("@Nombre", txtCliente.Text);
-            cmd.Parameters.AddWithValue("@Nit", txtNIT.Text);
-            cmd.Parameters.AddWithValue("@Telefono", txtTEL.Text);
-            cmd.Parameters.AddWithValue("@Direccion", txtDireccion.Text);
-            cmd.Parameters.AddWithValue("@FechaCreacion", DateTime.Parse(dateFecha.Text));
-            cmd.Parameters.AddWithValue("@Estado",cboxEstado.Text);
-           
-
-            // VERIFICA SI SE AGREGARON FILAS
-            cant = cmd.ExecuteNonQuery();
-            if (cant > 0)
+            if (string.IsNullOrEmpty(txtCliente.Text) || string.IsNullOrEmpty(txtDireccion.Text) || string.IsNullOrEmpty(txtNIT.Text) || string.IsNullOrEmpty(txtTEL.Text))
             {
-                MessageBox.Show("Se ha insertado los datos correctamente", "¡Datos Guardados!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //Datos vacios
+                lblERROR.Text = "HAY DATOS \nVACIOS";
 
-                //DEJAMOS EN BLANCO TODAS LAS CASILLAS
-                txtCliente.Text = "";
-                txtNIT.Text = "";
-                txtTEL.Text = "";
-                txtDireccion.Text = "";
-                dateFecha.Text = "";
-                cboxEstado.Text = "";
+            }
+            else if (cboxEstado.Text != "ACTIVO" && cboxEstado.Text != "INACTIVO")
+            {
 
-                // MODIFICAR SEGUN CRUD UTILIZADO
-                string QryConsultarClientes = "Select * from tbl_clientes";
-                SqlDataAdapter adapter = new SqlDataAdapter(QryConsultarClientes, conn);
-                DataTable dt = new DataTable();
-                adapter.Fill(dt);
-                dgviewClientes.DataSource = dt;
-
+                //Dato no seleccionado
+                lblERROR.Text = "   Hay datos \n sin seleccionar";
             }
             else
             {
-                MessageBox.Show("No se agregó registro!!!", "Advertencia!!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
 
-            // Cerrar la conexión
-            conn.Close();
+                //SE ABRE LA CONEXIÓN SQL
+                int cant = 0;
+                conn.Open();
+
+                //SE MODIFICA SEGUN DATOS DE LA BASE DE DATOS Y [DISEÑO]
+                string QryAgregarClientes = "Insert into tbl_clientes (Nombre, Nit, Telefono, Direccion, FechaCreacion, Estado) values (@Nombre, @Nit, @Telefono, @Direccion, @FechaCreacion, @Estado)";
+                SqlCommand cmd = new SqlCommand(QryAgregarClientes, conn);
+                cmd.Parameters.AddWithValue("@Nombre", txtCliente.Text);
+                cmd.Parameters.AddWithValue("@Nit", txtNIT.Text);
+                cmd.Parameters.AddWithValue("@Telefono", txtTEL.Text);
+                cmd.Parameters.AddWithValue("@Direccion", txtDireccion.Text);
+                cmd.Parameters.AddWithValue("@FechaCreacion", DateTime.Parse(dateFecha.Text));
+                cmd.Parameters.AddWithValue("@Estado", cboxEstado.Text);
+
+
+                // VERIFICA SI SE AGREGARON FILAS
+                cant = cmd.ExecuteNonQuery();
+                if (cant > 0)
+                {
+                    MessageBox.Show("Se ha insertado los datos correctamente", "¡Datos Guardados!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    //DEJAMOS EN BLANCO TODAS LAS CASILLAS
+                    txtCliente.Text = "";
+                    txtNIT.Text = "";
+                    txtTEL.Text = "";
+                    txtDireccion.Text = "";
+                    dateFecha.Text = "";
+                    cboxEstado.Text = "";
+                    lblERROR.Text = "";
+
+                    // MODIFICAR SEGUN CRUD UTILIZADO
+                    string QryConsultarClientes = "Select * from tbl_clientes";
+                    SqlDataAdapter adapter = new SqlDataAdapter(QryConsultarClientes, conn);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+                    dgviewClientes.DataSource = dt;
+
+                }
+                else
+                {
+                    MessageBox.Show("No se agregó registro!!!", "Advertencia!!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+
+                // Cerrar la conexión
+                conn.Close();
+            }
         }
     }
 }

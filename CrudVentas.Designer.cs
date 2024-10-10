@@ -47,6 +47,7 @@
             this.txtBusqueda = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvVentas = new System.Windows.Forms.DataGridView();
+            this.lblERROR = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).BeginInit();
             this.SuspendLayout();
@@ -83,6 +84,7 @@
             // 
             this.comboPAGO.FormattingEnabled = true;
             this.comboPAGO.Items.AddRange(new object[] {
+            "Seleccionar",
             "Efectivo",
             "Tarjeta",
             "Transferencia"});
@@ -248,11 +250,22 @@
             this.dgvVentas.Size = new System.Drawing.Size(766, 391);
             this.dgvVentas.TabIndex = 38;
             // 
+            // lblERROR
+            // 
+            this.lblERROR.AutoSize = true;
+            this.lblERROR.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblERROR.ForeColor = System.Drawing.Color.Red;
+            this.lblERROR.Location = new System.Drawing.Point(46, 578);
+            this.lblERROR.Name = "lblERROR";
+            this.lblERROR.Size = new System.Drawing.Size(0, 32);
+            this.lblERROR.TabIndex = 23;
+            // 
             // CrudVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1362, 664);
+            this.Controls.Add(this.lblERROR);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnEditar);
@@ -294,5 +307,6 @@
         private System.Windows.Forms.TextBox txtBusqueda;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvVentas;
+        private System.Windows.Forms.Label lblERROR;
     }
 }

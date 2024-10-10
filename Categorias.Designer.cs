@@ -45,6 +45,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtCodigoCategoria = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.lblERROR = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgviewCategoria)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -131,6 +132,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lblERROR);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.comboEstado);
             this.groupBox1.Controls.Add(this.txtDescripcion);
@@ -223,6 +225,16 @@
             this.label2.TabIndex = 13;
             this.label2.Text = "Codigo Categoria";
             // 
+            // lblERROR
+            // 
+            this.lblERROR.AutoSize = true;
+            this.lblERROR.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblERROR.ForeColor = System.Drawing.Color.Red;
+            this.lblERROR.Location = new System.Drawing.Point(86, 350);
+            this.lblERROR.Name = "lblERROR";
+            this.lblERROR.Size = new System.Drawing.Size(0, 32);
+            this.lblERROR.TabIndex = 58;
+            // 
             // Categorias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -267,5 +279,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtCodigoCategoria;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblERROR;
     }
 }
