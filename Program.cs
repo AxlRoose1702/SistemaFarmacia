@@ -13,7 +13,6 @@ namespace SistemaFarmacia
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new CrudUsuarios());
             Application.Run(new CrudMedicamentos());
 
         }

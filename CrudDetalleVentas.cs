@@ -33,7 +33,7 @@ namespace SistemaFarmacia
             if (string.IsNullOrEmpty(txtCodMedicamento.Text) || string.IsNullOrEmpty(txtCodVenta.Text) || string.IsNullOrEmpty(txtDescuento.Text) || string.IsNullOrEmpty(txtImpuesto.Text) || string.IsNullOrEmpty(txtPrecio.Text))
             {
                 //Datos vacios
-                lblERROR.Text = "HAY DATOS\n VACIOS";
+                MessageBox.Show("Hay datos vacios");
 
             }
             else

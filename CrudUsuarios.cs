@@ -43,14 +43,14 @@ namespace SistemaFarmacia
             if (string.IsNullOrEmpty(txtEmail.Text) || string.IsNullOrEmpty(txtPassword.Text) || string.IsNullOrEmpty(txtUsuario.Text))
             {
                 //Datos vacios
-                lblERROR.Text = "HAY DATOS\n VACIOS";
+                MessageBox.Show("Hay datos vacios en el formulario");
 
             }
             else if (comboEstado.Text != "ACTIVO" && comboEstado.Text != "INACTIVO")
             {
 
                 //Dato no seleccionado
-                lblERROR.Text = "   Hay datos \n sin seleccionar";
+                MessageBox.Show("Hay datos sin seleccionar en el formulario");
             }
             else
             {

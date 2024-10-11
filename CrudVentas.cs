@@ -1,14 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace SistemaFarmacia
 {
@@ -40,12 +33,12 @@ namespace SistemaFarmacia
             if (string.IsNullOrEmpty(txtCodigoC.Text) || string.IsNullOrEmpty(txtCodigoU.Text))
             {
                 //Datos vacios
-                lblERROR.Text = "HAY DATOS\n VACIOS";
+                MessageBox.Show("Hay datos vacios en el formulario");
 
-            } else if (comboPAGO.Text != "Efectivo" && comboPAGO.Text != "Transferencia" && comboPAGO.Text != "Tarjeta") { 
+            } else if (comboPAGO.Text != "Efectivo" && comboPAGO.Text != "Transferencia" && comboPAGO.Text != "Tarjeta") {
 
                 //Dato no seleccionado
-                lblERROR.Text = "   Hay datos \n sin seleccionar";
+                MessageBox.Show("Hay datos sin seleccionar en el formulario");
             }
             else
             { 
