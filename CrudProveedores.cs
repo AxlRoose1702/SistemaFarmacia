@@ -32,14 +32,14 @@ namespace SistemaFarmacia
             if (string.IsNullOrEmpty(txtDireccion.Text) || string.IsNullOrEmpty(txtEmail.Text) || string.IsNullOrEmpty(txtNIT.Text) || string.IsNullOrEmpty(txtProveedor.Text) || string.IsNullOrEmpty(txtTEL.Text))
             {
                 //Datos vacios
-                lblERROR.Text = "HAY DATOS\n VACIOS";
+                MessageBox.Show("Hay datos vacios en el formulario");
 
             }
             else if (cboxEstado.Text != "ACTIVO" && cboxEstado.Text != "INACTIVO")
             {
 
                 //Dato no seleccionado
-                lblERROR.Text = "   Hay datos \n sin seleccionar";
+                MessageBox.Show("Hay datos sin seleccionar en el formulario");
             }
             else
             {
@@ -58,7 +58,6 @@ namespace SistemaFarmacia
                 int cant = cmd.ExecuteNonQuery();
 
                 // VERIFICA SI SE AGREGARON FILAS
-
                 if (cant > 0)
                 {
                     MessageBox.Show("Se ha insertado los datos correctamente", "¡Datos Guardados!", MessageBoxButtons.OK, MessageBoxIcon.Information);

@@ -48,14 +48,14 @@ namespace SistemaFarmacia
             if (string.IsNullOrEmpty(txtCliente.Text) || string.IsNullOrEmpty(txtDireccion.Text) || string.IsNullOrEmpty(txtNIT.Text) || string.IsNullOrEmpty(txtTEL.Text))
             {
                 //Datos vacios
-                lblERROR.Text = "HAY DATOS \nVACIOS";
+                MessageBox.Show("Hay datos vacios en el formulario");
 
             }
             else if (cboxEstado.Text != "ACTIVO" && cboxEstado.Text != "INACTIVO")
             {
 
                 //Dato no seleccionado
-                lblERROR.Text = "   Hay datos \n sin seleccionar";
+                MessageBox.Show("Hay datos sin seleccionar en el formulario");
             }
             else
             {
