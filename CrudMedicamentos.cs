@@ -62,7 +62,7 @@ namespace SistemaFarmacia
 
         private void CrudMedicamentos_Load(object sender, EventArgs e)
         {
-           // ESTO SE MODIFICA A CADA CRUD
+            // ESTO SE MODIFICA A CADA CRUD
             string QryConsultarMedicamentos = "Select * from tbl_medicamentos";
             SqlDataAdapter adapter = new SqlDataAdapter(QryConsultarMedicamentos, conn);
             DataTable dt = new DataTable();
@@ -139,5 +139,85 @@ namespace SistemaFarmacia
                 conn.Close();
             }
         }
+        
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+
+            if (string.IsNullOrEmpty(txtCodCategorias.Text) || string.IsNullOrEmpty(txtCodProveedor.Text) || string.IsNullOrEmpty(txtDescripcion.Text) || string.IsNullOrEmpty(txtPrecio.Text) || string.IsNullOrEmpty(txtStock.Text))
+            {
+                //Datos vacios
+                MessageBox.Show("Hay datos vacios en el formulario");
+
+            }
+            else if (comboMEDIDA.Text != "capsulas" && comboMEDIDA.Text != "tabletas")
+            {
+
+                //Dato no seleccionado
+                MessageBox.Show("Hay datos sin seleccionar en el formulario");
+            }
+            else
+            {
+
+                int cant = 0;
+                conn.Open();
+
+                // Captura datos formulario y actualiza en base de datos
+                string QryActualizaMedicamentos = "Update tbl_medicamentos set Descripcion=@Descripcion, UnidadMedida=@UnidadMedida, Precio=@Precio, Stock=@Stock, FechaIngreso=@FechaIngreso, FechaVencimiento=@FechaVencimiento, CodigoCategoria=@CodigoCategoria, CodigoProveedor=@CodigoProveedor where CodigoMedicamento=@CodigoMedicamento";
+                SqlCommand commandQryActualiza = new SqlCommand(QryActualizaMedicamentos, conn);
+                commandQryActualiza.Parameters.AddWithValue("@CodigoMedicamento", txtCodigo.Text);
+                commandQryActualiza.Parameters.AddWithValue("@Descripcion", txtDescripcion.Text);
+                commandQryActualiza.Parameters.AddWithValue("@UnidadMedida", comboMEDIDA.Text);
+                commandQryActualiza.Parameters.AddWithValue("@Precio", txtPrecio.Text);
+                commandQryActualiza.Parameters.AddWithValue("@Stock", txtStock.Text);
+                commandQryActualiza.Parameters.AddWithValue("@FechaIngreso", DateTime.Parse(dateIngreso.Text));
+                commandQryActualiza.Parameters.AddWithValue("@FechaVencimiento", DateTime.Parse(dateVencimiento.Text));
+                commandQryActualiza.Parameters.AddWithValue("@CodigoCategoria", txtCodCategorias.Text);
+                commandQryActualiza.Parameters.AddWithValue("@CodigoProveedor", txtCodProveedor.Text);
+                cant = commandQryActualiza.ExecuteNonQuery();
+
+                // Valida si se actualizaron datos en la base de datos
+                if (cant > 0)
+                {
+                    MessageBox.Show("Registro Actualizado!!!", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    txtCodigo.Text = "";
+                    txtDescripcion.Text = "";
+                    comboMEDIDA.Text = "";
+                    txtPrecio.Text = "";
+                    txtStock.Text = "";
+                    txtCodCategorias.Text = "";
+                    txtCodProveedor.Text = "";
+
+                    string QryConsultarMedicamentos = "Select * from tbl_medicamentos";
+                    SqlDataAdapter adapter = new SqlDataAdapter(QryConsultarMedicamentos, conn);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+                    dgvMedicamentos.DataSource = dt;
+
+                }
+                else
+                {
+                    MessageBox.Show("No se actualizo registro!!!", "Advertencia!!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                conn.Close(); // Cerrar la conexión
+            }
+
+        }
+
+        private void dgvMedicamentos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtCodigo.Text = dgvMedicamentos.SelectedCells[0].Value.ToString();
+            txtDescripcion.Text = dgvMedicamentos.SelectedCells[1].Value.ToString();
+            comboMEDIDA.Text = dgvMedicamentos.SelectedCells[2].Value.ToString();
+            txtPrecio.Text = dgvMedicamentos.SelectedCells[3].Value.ToString();
+            txtStock.Text = dgvMedicamentos.SelectedCells[4].Value.ToString();
+            txtCodCategorias.Text = dgvMedicamentos.SelectedCells[7].Value.ToString();
+            txtCodProveedor.Text = dgvMedicamentos.SelectedCells[8].Value.ToString();
+            dateIngreso.Text= dgvMedicamentos.SelectedCells[5].Value.ToString();
+            dateVencimiento.Text = dgvMedicamentos.SelectedCells[6].Value.ToString();
+            //ESTO SIRVE PARA CAPTURAR LOS DATOS DE LA BASE DE DATOS Y MANDARLOS AL FORM EDITABLE
+
+        }
+
     }
 }
