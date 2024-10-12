@@ -188,8 +188,8 @@ namespace SistemaFarmacia
                     txtCodCategorias.Text = "";
                     txtCodProveedor.Text = "";
 
-                    string QryConsultarUsuarios = "Select * from tbl_medicamentos";
-                    SqlDataAdapter adapter = new SqlDataAdapter(QryConsultarUsuarios, conn);
+                    string QryConsultarMedicamentos = "Select * from tbl_medicamentos";
+                    SqlDataAdapter adapter = new SqlDataAdapter(QryConsultarMedicamentos, conn);
                     DataTable dt = new DataTable();
                     adapter.Fill(dt);
                     dgvMedicamentos.DataSource = dt;
