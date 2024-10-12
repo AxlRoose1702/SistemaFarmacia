@@ -282,6 +282,7 @@
             this.btnEditar.TabIndex = 53;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnGuardar
             // 
@@ -335,13 +336,17 @@
             // 
             // dgvMedicamentos
             // 
+            this.dgvMedicamentos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvMedicamentos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMedicamentos.Location = new System.Drawing.Point(558, 154);
             this.dgvMedicamentos.Name = "dgvMedicamentos";
+            this.dgvMedicamentos.ReadOnly = true;
             this.dgvMedicamentos.RowHeadersWidth = 51;
             this.dgvMedicamentos.RowTemplate.Height = 24;
+            this.dgvMedicamentos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMedicamentos.Size = new System.Drawing.Size(766, 391);
             this.dgvMedicamentos.TabIndex = 47;
+            this.dgvMedicamentos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMedicamentos_CellContentClick);
             // 
             // lblERROR
             // 
