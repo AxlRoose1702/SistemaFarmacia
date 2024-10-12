@@ -167,8 +167,8 @@ namespace SistemaFarmacia
                 commandQryActualiza.Parameters.AddWithValue("@CodigoMedicamento", txtCodigo.Text);
                 commandQryActualiza.Parameters.AddWithValue("@Descripcion", txtDescripcion.Text);
                 commandQryActualiza.Parameters.AddWithValue("@UnidadMedida", comboMEDIDA.Text);
-                commandQryActualiza.Parameters.AddWithValue("@Precio", txtPrecio.Text);
-                commandQryActualiza.Parameters.AddWithValue("@Stock", txtStock.Text);
+                commandQryActualiza.Parameters.AddWithValue("@Precio", double.Parse(txtPrecio.Text));
+                commandQryActualiza.Parameters.AddWithValue("@Stock", int.Parse(txtStock.Text));
                 commandQryActualiza.Parameters.AddWithValue("@FechaIngreso", DateTime.Parse(dateIngreso.Text));
                 commandQryActualiza.Parameters.AddWithValue("@FechaVencimiento", DateTime.Parse(dateVencimiento.Text));
                 commandQryActualiza.Parameters.AddWithValue("@CodigoCategoria", txtCodCategorias.Text);
