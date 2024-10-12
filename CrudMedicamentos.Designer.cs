@@ -308,7 +308,7 @@
             // btnBuscar
             // 
             this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.Location = new System.Drawing.Point(798, 103);
+            this.btnBuscar.Location = new System.Drawing.Point(922, 103);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(114, 34);
             this.btnBuscar.TabIndex = 50;
@@ -319,7 +319,7 @@
             // 
             this.txtBusqueda.BackColor = System.Drawing.SystemColors.Window;
             this.txtBusqueda.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtBusqueda.Location = new System.Drawing.Point(931, 111);
+            this.txtBusqueda.Location = new System.Drawing.Point(1055, 111);
             this.txtBusqueda.Name = "txtBusqueda";
             this.txtBusqueda.Size = new System.Drawing.Size(280, 22);
             this.txtBusqueda.TabIndex = 49;
@@ -344,7 +344,7 @@
             this.dgvMedicamentos.RowHeadersWidth = 51;
             this.dgvMedicamentos.RowTemplate.Height = 24;
             this.dgvMedicamentos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMedicamentos.Size = new System.Drawing.Size(766, 391);
+            this.dgvMedicamentos.Size = new System.Drawing.Size(777, 391);
             this.dgvMedicamentos.TabIndex = 47;
             this.dgvMedicamentos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMedicamentos_CellContentClick);
             // 

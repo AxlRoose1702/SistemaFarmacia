@@ -215,7 +215,7 @@ namespace SistemaFarmacia
             txtCodProveedor.Text = dgvMedicamentos.SelectedCells[8].Value.ToString();
             dateIngreso.Text= dgvMedicamentos.SelectedCells[5].Value.ToString();
             dateVencimiento.Text = dgvMedicamentos.SelectedCells[6].Value.ToString();
-
+            //ESTO SIRVE PARA CAPTURAR LOS DATOS DE LA BASE DE DATOS Y MANDARLOS AL FORM EDITABLE
 
         }
 
