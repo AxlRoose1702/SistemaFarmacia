@@ -75,6 +75,7 @@
             this.btnEditar.TabIndex = 42;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnGuardar
             // 
@@ -242,7 +243,6 @@
             this.txtCodigoCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCodigoCliente.Location = new System.Drawing.Point(12, 72);
             this.txtCodigoCliente.Name = "txtCodigoCliente";
-            this.txtCodigoCliente.ReadOnly = true;
             this.txtCodigoCliente.Size = new System.Drawing.Size(280, 22);
             this.txtCodigoCliente.TabIndex = 14;
             // 
