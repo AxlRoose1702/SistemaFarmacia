@@ -56,13 +56,17 @@
             // 
             // dgviewUsuarios
             // 
+            this.dgviewUsuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgviewUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgviewUsuarios.Location = new System.Drawing.Point(548, 153);
             this.dgviewUsuarios.Name = "dgviewUsuarios";
+            this.dgviewUsuarios.ReadOnly = true;
             this.dgviewUsuarios.RowHeadersWidth = 51;
             this.dgviewUsuarios.RowTemplate.Height = 24;
+            this.dgviewUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgviewUsuarios.Size = new System.Drawing.Size(766, 391);
             this.dgviewUsuarios.TabIndex = 0;
+            this.dgviewUsuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgviewUsuarios_CellContentClick);
             // 
             // label1
             // 
@@ -73,7 +77,6 @@
             this.label1.Size = new System.Drawing.Size(264, 32);
             this.label1.TabIndex = 1;
             this.label1.Text = "DATOS USUARIOS";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // date
             // 
@@ -250,7 +253,7 @@
             this.btnGuardar.TabIndex = 26;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
-            this.btnGuardar.Click += new System.EventHandler(this.button2_Click);
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnEditar
             // 
@@ -261,6 +264,7 @@
             this.btnEditar.TabIndex = 27;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnEliminar
             // 
