@@ -13,17 +13,12 @@ namespace SistemaFarmacia
             // CONEXIONES A BASE DE DATOS (3 VERSIONES)
             InitializeComponent();
             //conn = new SqlConnection("Data Source=LAPTOP-JC6HE824;Initial Catalog=Db_farmacia;Integrated Security=True;");
-            conn = new SqlConnection("Data Source=GODLECH\\SQLEXPRESS;Initial Catalog=Db_farmacia;Integrated Security=True;");
-            //conn = new SqlConnection("server=DESKTOP-QDTQ6AS\\SQLEXPRESS; database=Db_farmacia; integrated security=true");
+            //conn = new SqlConnection("Data Source=GODLECH\\SQLEXPRESS;Initial Catalog=Db_farmacia;Integrated Security=True;");
+            conn = new SqlConnection("server=DESKTOP-QDTQ6AS\\SQLEXPRESS; database=Db_farmacia; integrated security=true");
 
             }
 
         private void dtpfecha_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dgviewClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
@@ -45,7 +40,7 @@ namespace SistemaFarmacia
         private void btnGuardar_Click(object sender, EventArgs e)
         {
 
-            if (string.IsNullOrEmpty(txtCliente.Text) || string.IsNullOrEmpty(txtDireccion.Text) || string.IsNullOrEmpty(txtNIT.Text) || string.IsNullOrEmpty(txtTEL.Text))
+            if (string.IsNullOrEmpty(txtCodigoCliente.Text) || string.IsNullOrEmpty(txtCliente.Text) || string.IsNullOrEmpty(txtDireccion.Text) || string.IsNullOrEmpty(txtNIT.Text) || string.IsNullOrEmpty(txtTEL.Text))
             {
                 //Datos vacios
                 MessageBox.Show("Hay datos vacios en el formulario");
@@ -106,6 +101,81 @@ namespace SistemaFarmacia
                 // Cerrar la conexión
                 conn.Close();
             }
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+
+            if (string.IsNullOrEmpty(txtCliente.Text) || string.IsNullOrEmpty(txtDireccion.Text) || string.IsNullOrEmpty(txtNIT.Text) || string.IsNullOrEmpty(txtTEL.Text))
+            {
+                //Datos vacios
+                MessageBox.Show("Hay datos vacios en el formulario");
+
+            }
+            else if (cboxEstado.Text != "ACTIVO" && cboxEstado.Text != "INACTIVO")
+            {
+
+                //Dato no seleccionado
+                MessageBox.Show("Hay datos sin seleccionar en el formulario");
+            }
+            else
+            {
+
+                //SE ABRE LA CONEXIÓN SQL
+                int cant = 0;
+                conn.Open();
+
+                // Captura datos formulario y actualiza en base de datos
+                string QryActualizaClientes = "Update tbl_clientes set Nombre=@Cliente, Nit=@Nit, Telefono=@Telefono, Direccion=@Direccion, Estado=@Estado, FechaCreacion=@FechaCreacion where CodigoCliente=@CodigoCliente";
+                SqlCommand commandQryActualiza = new SqlCommand(QryActualizaClientes, conn);
+                commandQryActualiza.Parameters.AddWithValue("@CodigoCliente", txtCodigoCliente.Text);
+                commandQryActualiza.Parameters.AddWithValue("@Cliente", txtCliente.Text);
+                commandQryActualiza.Parameters.AddWithValue("@Nit", txtNIT.Text);
+                commandQryActualiza.Parameters.AddWithValue("@Telefono", txtTEL.Text);
+                commandQryActualiza.Parameters.AddWithValue("@Direccion", txtDireccion.Text);
+                commandQryActualiza.Parameters.AddWithValue("@Estado", cboxEstado.Text);
+                commandQryActualiza.Parameters.AddWithValue("@FechaCreacion", DateTime.Parse(dateFecha.Text));
+                cant = commandQryActualiza.ExecuteNonQuery();
+
+                // Valida si se actualizaron datos en la base de datos
+                if (cant > 0)
+                {
+                    MessageBox.Show("Registro Actualizado!!!", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    txtCodigoCliente.Text = "";
+                    txtCliente.Text = "";
+                    txtNIT.Text = "";
+                    txtTEL.Text = "";
+                    txtDireccion.Text = "";
+                    cboxEstado.Text = "";
+                    dateFecha.Text = "";
+
+                    string QryConsultarClientes = "Select * from tbl_clientes";
+                    SqlDataAdapter adapter = new SqlDataAdapter(QryConsultarClientes, conn);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+                    dgviewClientes.DataSource = dt;
+
+                }
+                else
+                {
+                    MessageBox.Show("No se actualizo registro!!!", "Advertencia!!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                conn.Close(); // Cerrar la conexión
+            }
+        }
+
+        private void dgviewClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtCodigoCliente.Text = dgviewClientes.SelectedCells[0].Value.ToString();
+            txtCliente.Text = dgviewClientes.SelectedCells[1].Value.ToString();
+            txtNIT.Text = dgviewClientes.SelectedCells[2].Value.ToString();
+            txtTEL.Text = dgviewClientes.SelectedCells[3].Value.ToString();
+            txtDireccion.Text = dgviewClientes.SelectedCells[4].Value.ToString();
+            cboxEstado.Text = dgviewClientes.SelectedCells[6].Value.ToString();
+            dateFecha.Text = dgviewClientes.SelectedCells[5].Value.ToString();
+            //ESTO SIRVE PARA CAPTURAR LOS DATOS DE LA BASE DE DATOS Y MANDARLOS AL FORM EDITABLE
+
         }
     }
 }

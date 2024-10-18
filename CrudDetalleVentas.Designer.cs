@@ -264,6 +264,7 @@
             this.btnEditar.TabIndex = 34;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnGuardar
             // 
@@ -307,13 +308,17 @@
             // 
             // dgvDetalleV
             // 
+            this.dgvDetalleV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvDetalleV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDetalleV.Location = new System.Drawing.Point(402, 104);
             this.dgvDetalleV.Name = "dgvDetalleV";
+            this.dgvDetalleV.ReadOnly = true;
             this.dgvDetalleV.RowHeadersWidth = 51;
             this.dgvDetalleV.RowTemplate.Height = 24;
+            this.dgvDetalleV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDetalleV.Size = new System.Drawing.Size(1159, 535);
             this.dgvDetalleV.TabIndex = 29;
+            this.dgvDetalleV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetalleV_CellContentClick);
             // 
             // lblERROR
             // 
