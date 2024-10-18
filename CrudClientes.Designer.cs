@@ -243,6 +243,7 @@
             this.txtCodigoCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCodigoCliente.Location = new System.Drawing.Point(12, 72);
             this.txtCodigoCliente.Name = "txtCodigoCliente";
+            this.txtCodigoCliente.ReadOnly = true;
             this.txtCodigoCliente.Size = new System.Drawing.Size(280, 22);
             this.txtCodigoCliente.TabIndex = 14;
             // 
@@ -258,11 +259,14 @@
             // 
             // dgviewClientes
             // 
+            this.dgviewClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgviewClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgviewClientes.Location = new System.Drawing.Point(492, 107);
             this.dgviewClientes.Name = "dgviewClientes";
+            this.dgviewClientes.ReadOnly = true;
             this.dgviewClientes.RowHeadersWidth = 51;
             this.dgviewClientes.RowTemplate.Height = 24;
+            this.dgviewClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgviewClientes.Size = new System.Drawing.Size(1054, 622);
             this.dgviewClientes.TabIndex = 38;
             this.dgviewClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgviewClientes_CellContentClick);

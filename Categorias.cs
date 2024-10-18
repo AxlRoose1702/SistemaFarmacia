@@ -139,9 +139,9 @@ namespace SistemaFarmacia
         private void dgviewCategoria_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             txtCodigoCategoria.Text = dgviewCategoria.SelectedCells[0].Value.ToString();
-            txtNombre.Text = dgviewCategoria.SelectedCells[0].Value.ToString();
-            txtDescripcion.Text = dgviewCategoria.SelectedCells[0].Value.ToString();
-            comboEstado.Text = dgviewCategoria.SelectedCells[0].Value.ToString();
+            txtNombre.Text = dgviewCategoria.SelectedCells[1].Value.ToString();
+            txtDescripcion.Text = dgviewCategoria.SelectedCells[2].Value.ToString();
+            comboEstado.Text = dgviewCategoria.SelectedCells[3].Value.ToString();
             //ESTO SIRVE PARA CAPTURAR LOS DATOS DE LA BASE DE DATOS Y MANDARLOS AL FORM EDITABLE
 
         }

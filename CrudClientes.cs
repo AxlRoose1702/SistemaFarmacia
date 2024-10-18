@@ -168,12 +168,12 @@ namespace SistemaFarmacia
         private void dgviewClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             txtCodigoCliente.Text = dgviewClientes.SelectedCells[0].Value.ToString();
-            txtCliente.Text = dgviewClientes.SelectedCells[0].Value.ToString();
-            txtNIT.Text = dgviewClientes.SelectedCells[0].Value.ToString();
-            txtTEL.Text = dgviewClientes.SelectedCells[0].Value.ToString();
-            txtDireccion.Text = dgviewClientes.SelectedCells[0].Value.ToString();
-            cboxEstado.Text = dgviewClientes.SelectedCells[0].Value.ToString();
-            dateFecha.Text = dgviewClientes.SelectedCells[0].Value.ToString();
+            txtCliente.Text = dgviewClientes.SelectedCells[1].Value.ToString();
+            txtNIT.Text = dgviewClientes.SelectedCells[2].Value.ToString();
+            txtTEL.Text = dgviewClientes.SelectedCells[3].Value.ToString();
+            txtDireccion.Text = dgviewClientes.SelectedCells[4].Value.ToString();
+            cboxEstado.Text = dgviewClientes.SelectedCells[6].Value.ToString();
+            dateFecha.Text = dgviewClientes.SelectedCells[5].Value.ToString();
             //ESTO SIRVE PARA CAPTURAR LOS DATOS DE LA BASE DE DATOS Y MANDARLOS AL FORM EDITABLE
 
         }
