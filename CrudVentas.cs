@@ -12,9 +12,9 @@ namespace SistemaFarmacia
         {
             // CONEXIONES A BASE DE DATOS (3 VERSIONES)
             InitializeComponent();
-            //conn = new SqlConnection("Data Source=LAPTOP-JC6HE824;Initial Catalog=Db_farmacia;Integrated Security=True;");
+            conn = new SqlConnection("Data Source=LAPTOP-JC6HE824;Initial Catalog=Db_farmacia;Integrated Security=True;");
             //conn = new SqlConnection("Data Source=GODLECH\\SQLEXPRESS;Initial Catalog=Db_farmacia;Integrated Security=True;");
-            conn = new SqlConnection("server=DESKTOP-QDTQ6AS\\SQLEXPRESS; database=Db_farmacia; integrated security=true");
+            //conn = new SqlConnection("server=DESKTOP-QDTQ6AS\\SQLEXPRESS; database=Db_farmacia; integrated security=true");
             comboPAGO.Text = "Seleccionar";
         }
 
@@ -152,6 +152,42 @@ namespace SistemaFarmacia
             comboPAGO.Text = dgvVentas.SelectedCells[4].Value.ToString();
             dateFecha.Text = dgvVentas.SelectedCells[1].Value.ToString();
             //ESTO SIRVE PARA CAPTURAR LOS DATOS DE LA BASE DE DATOS Y MANDARLOS AL FORM EDITABLE
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            int cant = 0;
+            conn.Open();
+
+            // Captura datos formulario y elimina en base de datos
+            string QryVentas = "Delete from tbl_ventas where CodigoVenta=@CodigoVenta";
+            SqlCommand commandQryEliminar = new SqlCommand(QryVentas, conn);
+            commandQryEliminar.Parameters.AddWithValue("@CodigoVenta", txtCodigoV.Text);
+            cant = commandQryEliminar.ExecuteNonQuery();
+
+            // Valida si se eliminaron datos en la base de datos
+            if (cant > 0)
+            {
+                MessageBox.Show("Registro Eliminado!!!", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                dateFecha.Text = "";
+                txtCodigoC.Text = "";
+                txtCodigoU.Text = "";
+                comboPAGO.Text = "";
+
+                // MODIFICAR SEGUN CRUD UTILIZADO
+                string QryConsultarVenta = "Select * from tbl_ventas";
+                SqlDataAdapter adapter = new SqlDataAdapter(QryConsultarVenta, conn);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+                dgvVentas.DataSource = dt;
+
+            }
+            else
+            {
+                MessageBox.Show("No se elimino el registro!!!", "Advertencia!!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            conn.Close();
         }
     }
 }
