@@ -14,8 +14,8 @@ namespace SistemaFarmacia
         {
             // CONEXIONES A BASE DE DATOS (3 VERSIONES)
             InitializeComponent();
-            //conn = new SqlConnection("Data Source=LAPTOP-JC6HE824;Initial Catalog=Db_farmacia;Integrated Security=True;");
-            conn = new SqlConnection("Data Source=GODLECH\\SQLEXPRESS;Initial Catalog=Db_farmacia;Integrated Security=True;");
+            conn = new SqlConnection("Data Source=LAPTOP-JC6HE824;Initial Catalog=Db_farmacia;Integrated Security=True;");
+            //conn = new SqlConnection("Data Source=GODLECH\\SQLEXPRESS;Initial Catalog=Db_farmacia;Integrated Security=True;");
             //conn = new SqlConnection("server=DESKTOP-QDTQ6AS\\SQLEXPRESS; database=Db_farmacia; integrated security=true");
 
         }
@@ -219,5 +219,42 @@ namespace SistemaFarmacia
 
         }
 
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            int cant = 0;
+            conn.Open();
+
+            // Captura datos formulario y elimina en base de datos
+            string QryMedicamentos = "Delete from tbl_medicamentos  where CodigoMedicamento=@CodigoMedicamento";
+            SqlCommand commandQryEliminar = new SqlCommand(QryMedicamentos, conn);
+            commandQryEliminar.Parameters.AddWithValue("@CodigoMedicamento", txtCodigo.Text);
+            cant = commandQryEliminar.ExecuteNonQuery();
+
+            // Valida si se eliminaron datos en la base de datos
+            if (cant > 0)
+            {
+                MessageBox.Show("Registro Eliminado!!!", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                txtCodigo.Text = "";
+                txtDescripcion.Text = "";
+                comboMEDIDA.Text = "";
+                txtPrecio.Text = "";
+                txtStock.Text = "";
+                txtCodCategorias.Text = "";
+                txtCodProveedor.Text = "";
+
+                string QryConsultarMedicamentos = "Select * from tbl_medicamentos";
+                SqlDataAdapter adapter = new SqlDataAdapter(QryConsultarMedicamentos, conn);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+                dgvMedicamentos.DataSource = dt;
+
+            }
+            else
+            {
+                MessageBox.Show("No se elimino el registro!!!", "Advertencia!!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            conn.Close();
+        }
     }
 }
