@@ -30,13 +30,13 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.btnMenuMedicamentos = new System.Windows.Forms.Button();
+            this.btnMenuVentas = new System.Windows.Forms.Button();
+            this.btnMenuDetalleV = new System.Windows.Forms.Button();
+            this.btnMenuCategorias = new System.Windows.Forms.Button();
+            this.btnMenuProveedores = new System.Windows.Forms.Button();
+            this.btnMenuClientes = new System.Windows.Forms.Button();
+            this.btnMenuUsuarios = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,13 +53,13 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button7);
-            this.groupBox1.Controls.Add(this.button6);
-            this.groupBox1.Controls.Add(this.button5);
-            this.groupBox1.Controls.Add(this.button4);
-            this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.btnMenuMedicamentos);
+            this.groupBox1.Controls.Add(this.btnMenuVentas);
+            this.groupBox1.Controls.Add(this.btnMenuDetalleV);
+            this.groupBox1.Controls.Add(this.btnMenuCategorias);
+            this.groupBox1.Controls.Add(this.btnMenuProveedores);
+            this.groupBox1.Controls.Add(this.btnMenuClientes);
+            this.groupBox1.Controls.Add(this.btnMenuUsuarios);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(49, 12);
             this.groupBox1.Name = "groupBox1";
@@ -68,82 +68,89 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // button1
+            // btnMenuMedicamentos
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.Info;
-            this.button1.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(61, 112);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(130, 67);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Menu Usuarios";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnMenuMedicamentos.BackColor = System.Drawing.SystemColors.Info;
+            this.btnMenuMedicamentos.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenuMedicamentos.Location = new System.Drawing.Point(406, 185);
+            this.btnMenuMedicamentos.Name = "btnMenuMedicamentos";
+            this.btnMenuMedicamentos.Size = new System.Drawing.Size(151, 79);
+            this.btnMenuMedicamentos.TabIndex = 7;
+            this.btnMenuMedicamentos.Text = "Menu Medicamentos";
+            this.btnMenuMedicamentos.UseVisualStyleBackColor = false;
+            this.btnMenuMedicamentos.Click += new System.EventHandler(this.btnMenuMedicamentos_Click);
             // 
-            // button2
+            // btnMenuVentas
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.Info;
-            this.button2.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(197, 112);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(130, 67);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Menu Clientes";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnMenuVentas.BackColor = System.Drawing.SystemColors.Info;
+            this.btnMenuVentas.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenuVentas.Location = new System.Drawing.Point(266, 185);
+            this.btnMenuVentas.Name = "btnMenuVentas";
+            this.btnMenuVentas.Size = new System.Drawing.Size(134, 79);
+            this.btnMenuVentas.TabIndex = 6;
+            this.btnMenuVentas.Text = "Menu Ventas";
+            this.btnMenuVentas.UseVisualStyleBackColor = false;
+            this.btnMenuVentas.Click += new System.EventHandler(this.btnMenuVentas_Click);
             // 
-            // button3
+            // btnMenuDetalleV
             // 
-            this.button3.BackColor = System.Drawing.SystemColors.Info;
-            this.button3.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(333, 112);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(133, 67);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Menu Proveedores";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnMenuDetalleV.BackColor = System.Drawing.SystemColors.Info;
+            this.btnMenuDetalleV.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenuDetalleV.Location = new System.Drawing.Point(126, 185);
+            this.btnMenuDetalleV.Name = "btnMenuDetalleV";
+            this.btnMenuDetalleV.Size = new System.Drawing.Size(134, 79);
+            this.btnMenuDetalleV.TabIndex = 5;
+            this.btnMenuDetalleV.Text = "Menu Detalle Ventas";
+            this.btnMenuDetalleV.UseVisualStyleBackColor = false;
+            this.btnMenuDetalleV.Click += new System.EventHandler(this.btnMenuDetalleV_Click);
             // 
-            // button4
+            // btnMenuCategorias
             // 
-            this.button4.BackColor = System.Drawing.SystemColors.Info;
-            this.button4.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(472, 112);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(133, 67);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "Menu Categorias";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnMenuCategorias.BackColor = System.Drawing.SystemColors.Info;
+            this.btnMenuCategorias.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenuCategorias.Location = new System.Drawing.Point(472, 112);
+            this.btnMenuCategorias.Name = "btnMenuCategorias";
+            this.btnMenuCategorias.Size = new System.Drawing.Size(133, 67);
+            this.btnMenuCategorias.TabIndex = 4;
+            this.btnMenuCategorias.Text = "Menu Categorias";
+            this.btnMenuCategorias.UseVisualStyleBackColor = false;
+            this.btnMenuCategorias.Click += new System.EventHandler(this.btnMenuCategorias_Click);
             // 
-            // button5
+            // btnMenuProveedores
             // 
-            this.button5.BackColor = System.Drawing.SystemColors.Info;
-            this.button5.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(126, 185);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(134, 79);
-            this.button5.TabIndex = 5;
-            this.button5.Text = "Menu Detalle Ventas";
-            this.button5.UseVisualStyleBackColor = false;
+            this.btnMenuProveedores.BackColor = System.Drawing.SystemColors.Info;
+            this.btnMenuProveedores.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenuProveedores.Location = new System.Drawing.Point(333, 112);
+            this.btnMenuProveedores.Name = "btnMenuProveedores";
+            this.btnMenuProveedores.Size = new System.Drawing.Size(133, 67);
+            this.btnMenuProveedores.TabIndex = 3;
+            this.btnMenuProveedores.Text = "Menu Proveedores";
+            this.btnMenuProveedores.UseVisualStyleBackColor = false;
+            this.btnMenuProveedores.Click += new System.EventHandler(this.btnMenuProveedores_Click);
             // 
-            // button6
+            // btnMenuClientes
             // 
-            this.button6.BackColor = System.Drawing.SystemColors.Info;
-            this.button6.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(266, 185);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(134, 79);
-            this.button6.TabIndex = 6;
-            this.button6.Text = "Menu Ventas";
-            this.button6.UseVisualStyleBackColor = false;
+            this.btnMenuClientes.BackColor = System.Drawing.SystemColors.Info;
+            this.btnMenuClientes.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenuClientes.Location = new System.Drawing.Point(197, 112);
+            this.btnMenuClientes.Name = "btnMenuClientes";
+            this.btnMenuClientes.Size = new System.Drawing.Size(130, 67);
+            this.btnMenuClientes.TabIndex = 2;
+            this.btnMenuClientes.Text = "Menu Clientes";
+            this.btnMenuClientes.UseVisualStyleBackColor = false;
+            this.btnMenuClientes.Click += new System.EventHandler(this.btnMenuClientes_Click);
             // 
-            // button7
+            // btnMenuUsuarios
             // 
-            this.button7.BackColor = System.Drawing.SystemColors.Info;
-            this.button7.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(406, 185);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(151, 79);
-            this.button7.TabIndex = 7;
-            this.button7.Text = "Menu Medicamentos";
-            this.button7.UseVisualStyleBackColor = false;
+            this.btnMenuUsuarios.BackColor = System.Drawing.SystemColors.Info;
+            this.btnMenuUsuarios.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenuUsuarios.Location = new System.Drawing.Point(61, 112);
+            this.btnMenuUsuarios.Name = "btnMenuUsuarios";
+            this.btnMenuUsuarios.Size = new System.Drawing.Size(130, 67);
+            this.btnMenuUsuarios.TabIndex = 1;
+            this.btnMenuUsuarios.Text = "Menu Usuarios";
+            this.btnMenuUsuarios.UseVisualStyleBackColor = false;
+            this.btnMenuUsuarios.Click += new System.EventHandler(this.btnMenuUsuarios_Click);
             // 
             // MenuNavegacion
             // 
@@ -163,12 +170,12 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnMenuMedicamentos;
+        private System.Windows.Forms.Button btnMenuVentas;
+        private System.Windows.Forms.Button btnMenuDetalleV;
+        private System.Windows.Forms.Button btnMenuCategorias;
+        private System.Windows.Forms.Button btnMenuProveedores;
+        private System.Windows.Forms.Button btnMenuClientes;
+        private System.Windows.Forms.Button btnMenuUsuarios;
     }
 }
