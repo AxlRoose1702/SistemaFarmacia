@@ -189,5 +189,21 @@ namespace SistemaFarmacia
             }
             conn.Close();
         }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            dateFecha.Text = "";
+            txtCodigoC.Text = "";
+            txtCodigoU.Text = "";
+            comboPAGO.Text = "";
+
+            // MODIFICAR SEGUN CRUD UTILIZADO
+            string QryConsultarVenta = "Select * from tbl_ventas";
+            SqlDataAdapter adapter = new SqlDataAdapter(QryConsultarVenta, conn);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+            dgvVentas.DataSource = dt;
+
+        }
     }
 }
