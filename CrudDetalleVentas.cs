@@ -202,5 +202,24 @@ namespace SistemaFarmacia
             }
             conn.Close();
         }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            txtCodigoDetalleV.Text = "";
+            txtCantidad.Text = "";
+            txtBusqueda.Text = "";
+            txtCodMedicamento.Text = "";
+            txtCodVenta.Text = "";
+            txtDescuento.Text = "";
+            txtPrecio.Text = "";
+            txtTotal.Text = "";
+            txtImpuesto.Text = "";
+
+            string QryConsultarDetalleVenta = "Select * from tbl_detalle_ventas";
+            SqlDataAdapter adapter = new SqlDataAdapter(QryConsultarDetalleVenta, conn);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+            dgvDetalleV.DataSource = dt;
+        }
     }
 }
