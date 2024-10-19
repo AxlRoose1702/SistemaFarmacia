@@ -12,9 +12,9 @@ namespace SistemaFarmacia
         {
             // CONEXIONES A BASE DE DATOS (3 VERSIONES)
             InitializeComponent();
-            //conn = new SqlConnection("Data Source=LAPTOP-JC6HE824;Initial Catalog=Db_farmacia;Integrated Security=True;");
+            conn = new SqlConnection("Data Source=LAPTOP-JC6HE824;Initial Catalog=Db_farmacia;Integrated Security=True;");
             //conn = new SqlConnection("Data Source=GODLECH\\SQLEXPRESS;Initial Catalog=Db_farmacia;Integrated Security=True;");
-            conn = new SqlConnection("server=DESKTOP-QDTQ6AS\\SQLEXPRESS; database=Db_farmacia; integrated security=true");
+            //conn = new SqlConnection("server=DESKTOP-QDTQ6AS\\SQLEXPRESS; database=Db_farmacia; integrated security=true");
 
         }
 
@@ -144,6 +144,41 @@ namespace SistemaFarmacia
             comboEstado.Text = dgviewCategoria.SelectedCells[3].Value.ToString();
             //ESTO SIRVE PARA CAPTURAR LOS DATOS DE LA BASE DE DATOS Y MANDARLOS AL FORM EDITABLE
 
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            int cant = 0;
+            conn.Open();
+
+            // Captura datos formulario y elimina en base de datos
+            string QryEliminaCategorias = "Delete from tbl_categorias  where CodigoCategoria=@CodigoCategoria";
+            SqlCommand commandQryElimina = new SqlCommand(QryEliminaCategorias, conn);
+            commandQryElimina.Parameters.AddWithValue("@CodigoCategoria", txtCodigoCategoria.Text);
+            cant = commandQryElimina.ExecuteNonQuery();
+
+            // Valida si se eliminaron datos en la base de datos
+            if (cant > 0)
+            {
+                MessageBox.Show("Registro Eliminado!!!", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                txtCodigoCategoria.Text = "";
+                txtDescripcion.Text = "";
+                txtNombre.Text = "";
+                txtBusqueda.Text = "";
+                comboEstado.Text = "";
+
+                string QryConsultarCategoria = "Select * from tbl_categorias";
+                SqlDataAdapter adapter = new SqlDataAdapter(QryConsultarCategoria, conn);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+                dgviewCategoria.DataSource = dt;
+            }
+            else
+            {
+                MessageBox.Show("No se elimino el registro!!!", "Advertencia!!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            conn.Close();
         }
     }
 }
