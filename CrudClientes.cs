@@ -215,5 +215,22 @@ namespace SistemaFarmacia
             }
             conn.Close();
         }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            txtCodigoCliente.Text = "";
+            txtCliente.Text = "";
+            txtBusqueda.Text = "";
+            txtDireccion.Text = "";
+            txtTEL.Text = "";
+            txtNIT.Text = "";
+            cboxEstado.Text = "";
+
+            string QryConsultarClientes = "Select * from tbl_clientes";
+            SqlDataAdapter adapter = new SqlDataAdapter(QryConsultarClientes, conn);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+            dgviewClientes.DataSource = dt;
+        }
     }
 }
