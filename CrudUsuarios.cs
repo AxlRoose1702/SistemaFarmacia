@@ -12,9 +12,9 @@ namespace SistemaFarmacia
         {
             // CONEXIONES A BASE DE DATOS (3 VERSIONES)
             InitializeComponent();
-            //conn = new SqlConnection("Data Source=LAPTOP-JC6HE824;Initial Catalog=Db_farmacia;Integrated Security=True;");
+            conn = new SqlConnection("Data Source=LAPTOP-JC6HE824;Initial Catalog=Db_farmacia;Integrated Security=True;");
             //conn = new SqlConnection("Data Source=GODLECH\\SQLEXPRESS;Initial Catalog=Db_farmacia;Integrated Security=True;");
-            conn = new SqlConnection("server=DESKTOP-QDTQ6AS\\SQLEXPRESS; database=Db_farmacia; integrated security=true");
+            //conn = new SqlConnection("server=DESKTOP-QDTQ6AS\\SQLEXPRESS; database=Db_farmacia; integrated security=true");
         }
 
         private void CrudUsuarios_Load(object sender, EventArgs e)
@@ -159,6 +159,43 @@ namespace SistemaFarmacia
             comboEstado.Text = dgviewUsuarios.SelectedCells[4].Value.ToString();
             date.Text = dgviewUsuarios.SelectedCells[5].Value.ToString();
             //ESTO SIRVE PARA CAPTURAR LOS DATOS DE LA BASE DE DATOS Y MANDARLOS AL FORM EDITABLE
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            int cant = 0;
+            conn.Open();
+
+            // Captura datos formulario y elimina en base de datos
+            string QryEliminaUsuarios = "Delete from tbl_usuarios where CodigoUsuario=@CodigoUsuario";
+            SqlCommand commandQryElimina = new SqlCommand(QryEliminaUsuarios, conn);
+            commandQryElimina.Parameters.AddWithValue("@CodigoUsuario", txtCodigoUsuario.Text);
+            cant = commandQryElimina.ExecuteNonQuery();
+
+            // Valida si se eliminaron datos en la base de datos
+            if (cant > 0)
+            {
+                MessageBox.Show("Registro Eliminado!!!", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                txtCodigoUsuario.Text = "";
+                txtUsuario.Text = "";
+                txtPassword.Text = "";
+                txtEmail.Text = "";
+                date.Text = "";
+                comboEstado.Text = "";
+
+                string QryConsultarUsuarios = "Select * from tbl_usuarios";
+                SqlDataAdapter adapter = new SqlDataAdapter(QryConsultarUsuarios, conn);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+                dgviewUsuarios.DataSource = dt;
+
+            }
+            else
+            {
+                MessageBox.Show("No se elimino el registro!!!", "Advertencia!!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            conn.Close();
         }
     }
 }
