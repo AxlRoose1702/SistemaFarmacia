@@ -32,7 +32,10 @@ namespace SistemaFarmacia
                     if (reader.Read())
                     {
                         string dbPasswordHash = reader["Contrasena"].ToString();
+                        MenuNavegacion nav = new MenuNavegacion();
+                        nav.Show();
                         MessageBox.Show("Sesion iniciada con exito!");
+
                     }
                     else
                     {
