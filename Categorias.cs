@@ -12,8 +12,8 @@ namespace SistemaFarmacia
         {
             // CONEXIONES A BASE DE DATOS (3 VERSIONES)
             InitializeComponent();
-            conn = new SqlConnection("Data Source=LAPTOP-JC6HE824;Initial Catalog=Db_farmacia;Integrated Security=True;");
-            //conn = new SqlConnection("Data Source=GODLECH\\SQLEXPRESS;Initial Catalog=Db_farmacia;Integrated Security=True;");
+            //conn = new SqlConnection("Data Source=LAPTOP-JC6HE824;Initial Catalog=Db_farmacia;Integrated Security=True;");
+            conn = new SqlConnection("Data Source=GODLECH\\SQLEXPRESS;Initial Catalog=Db_farmacia;Integrated Security=True;");
             //conn = new SqlConnection("server=DESKTOP-QDTQ6AS\\SQLEXPRESS; database=Db_farmacia; integrated security=true");
 
         }
@@ -179,6 +179,21 @@ namespace SistemaFarmacia
                 MessageBox.Show("No se elimino el registro!!!", "Advertencia!!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             conn.Close();
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            txtCodigoCategoria.Text = "";
+            txtDescripcion.Text = "";
+            txtNombre.Text = "";
+            txtBusqueda.Text = "";
+            comboEstado.Text = "";
+
+            string QryConsultarCategoria = "Select * from tbl_categorias";
+            SqlDataAdapter adapter = new SqlDataAdapter(QryConsultarCategoria, conn);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+            dgviewCategoria.DataSource = dt;
         }
     }
 }
