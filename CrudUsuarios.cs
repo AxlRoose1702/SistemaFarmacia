@@ -197,5 +197,24 @@ namespace SistemaFarmacia
             }
             conn.Close();
         }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+
+            txtCodigoUsuario.Text = "";
+            txtUsuario.Text = "";
+            txtPassword.Text = "";
+            txtEmail.Text = "";
+            date.Text = "";
+            comboEstado.Text = "";
+
+            string QryConsultarUsuarios = "Select * from tbl_usuarios";
+            SqlDataAdapter adapter = new SqlDataAdapter(QryConsultarUsuarios, conn);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+            dgviewUsuarios.DataSource = dt;
+
+
+        }
     }
 }
