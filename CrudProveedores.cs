@@ -13,8 +13,8 @@ namespace SistemaFarmacia
             // CONEXIONES A BASE DE DATOS (3 VERSIONES)
             InitializeComponent();
             //conn = new SqlConnection("Data Source=LAPTOP-JC6HE824;Initial Catalog=Db_farmacia;Integrated Security=True;");
-            //conn = new SqlConnection("Data Source=GODLECH\\SQLEXPRESS;Initial Catalog=Db_farmacia;Integrated Security=True;");
-            conn = new SqlConnection("server=DESKTOP-QDTQ6AS\\SQLEXPRESS; database=Db_farmacia; integrated security=true");
+            conn = new SqlConnection("Data Source=GODLECH\\SQLEXPRESS;Initial Catalog=Db_farmacia;Integrated Security=True;");
+            //conn = new SqlConnection("server=DESKTOP-QDTQ6AS\\SQLEXPRESS; database=Db_farmacia; integrated security=true");
         
         }
 
@@ -187,6 +187,45 @@ namespace SistemaFarmacia
             DataTable dt = new DataTable();
             adapter.Fill(dt);
             dgviewProveedores.DataSource = dt;
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            int cant = 0;
+            conn.Open();
+
+            // Captura datos formulario y elimina en base de datos
+            string QryProveedores = "Delete from tbl_proveedores where CodigoProveedor=@CodigoProveedor";
+            SqlCommand commandQryEliminar = new SqlCommand(QryProveedores, conn);
+            commandQryEliminar.Parameters.AddWithValue("@CodigoProveedor", txtCodigoProveedor.Text);
+            cant = commandQryEliminar.ExecuteNonQuery();
+
+            // Valida si se eliminaron datos en la base de datos
+            if (cant > 0)
+            {
+                MessageBox.Show("Registro Eliminado!!!", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                txtCodigoProveedor.Text = "";
+                txtProveedor.Text = "";
+                txtNIT.Text = "";
+                txtEmail.Text = "";
+                txtTEL.Text = "";
+                txtDireccion.Text = "";
+                cboxEstado.Text = "";
+                dtpfecha.Text = "";
+
+                string QryConsultarProveedores = "Select * from tbl_proveedores";
+                SqlDataAdapter adapter = new SqlDataAdapter(QryConsultarProveedores, conn);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+                dgviewProveedores.DataSource = dt;
+
+            }
+            else
+            {
+                MessageBox.Show("No se elimino el registro!!!", "Advertencia!!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            conn.Close();
         }
     }
 }
