@@ -170,5 +170,23 @@ namespace SistemaFarmacia
             //ESTO SIRVE PARA CAPTURAR LOS DATOS DE LA BASE DE DATOS Y MANDARLOS AL FORM EDITABLE
 
         }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            txtCodigoProveedor.Text = "";
+            txtProveedor.Text = "";
+            txtNIT.Text = "";
+            txtEmail.Text = "";
+            txtTEL.Text = "";
+            txtDireccion.Text = "";
+            cboxEstado.Text = "";
+            dtpfecha.Text = "";
+
+            string QryConsultarProveedores = "Select * from tbl_proveedores";
+            SqlDataAdapter adapter = new SqlDataAdapter(QryConsultarProveedores, conn);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+            dgviewProveedores.DataSource = dt;
+        }
     }
 }
