@@ -12,9 +12,9 @@ namespace SistemaFarmacia
         {
             // CONEXIONES A BASE DE DATOS (3 VERSIONES)
             InitializeComponent();
-            //conn = new SqlConnection("Data Source=LAPTOP-JC6HE824;Initial Catalog=Db_farmacia;Integrated Security=True;");
+            conn = new SqlConnection("Data Source=LAPTOP-JC6HE824;Initial Catalog=Db_farmacia;Integrated Security=True;");
             //conn = new SqlConnection("Data Source=GODLECH\\SQLEXPRESS;Initial Catalog=Db_farmacia;Integrated Security=True;");
-            conn = new SqlConnection("server=DESKTOP-QDTQ6AS\\SQLEXPRESS; database=Db_farmacia; integrated security=true");
+            //conn = new SqlConnection("server=DESKTOP-QDTQ6AS\\SQLEXPRESS; database=Db_farmacia; integrated security=true");
 
             }
 
@@ -176,6 +176,44 @@ namespace SistemaFarmacia
             dateFecha.Text = dgviewClientes.SelectedCells[5].Value.ToString();
             //ESTO SIRVE PARA CAPTURAR LOS DATOS DE LA BASE DE DATOS Y MANDARLOS AL FORM EDITABLE
 
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            int cant = 0;
+            conn.Open();
+
+            // Captura datos formulario y elimina en base de datos
+            string QryEliminaClientes = "Delete from tbl_clientes  where CodigoCliente=@CodigoCliente";
+            SqlCommand commandQryElimina = new SqlCommand(QryEliminaClientes, conn);
+            commandQryElimina.Parameters.AddWithValue("@CodigoCliente", txtCodigoCliente.Text);
+            cant = commandQryElimina.ExecuteNonQuery();
+
+            // Valida si se eliminaron datos en la base de datos
+            if (cant > 0)
+            {
+                MessageBox.Show("Registro Eliminado!!!", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                txtCodigoCliente.Text = "";
+                txtCliente.Text = "";
+                txtBusqueda.Text = "";
+                txtDireccion.Text = "";
+                txtTEL.Text = "";
+                txtNIT.Text = "";
+                cboxEstado.Text = "";
+
+                string QryConsultarClientes = "Select * from tbl_clientes";
+                SqlDataAdapter adapter = new SqlDataAdapter(QryConsultarClientes, conn);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+                dgviewClientes.DataSource = dt;
+
+            }
+            else
+            {
+                MessageBox.Show("No se elimino el registro!!!", "Advertencia!!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            conn.Close();
         }
     }
 }
