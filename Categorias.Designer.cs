@@ -37,6 +37,7 @@
             this.dgviewCategoria = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblERROR = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.comboEstado = new System.Windows.Forms.ComboBox();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
@@ -45,7 +46,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtCodigoCategoria = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.lblERROR = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgviewCategoria)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -69,6 +69,7 @@
             this.btnEditar.TabIndex = 43;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnGuardar
             // 
@@ -112,13 +113,17 @@
             // 
             // dgviewCategoria
             // 
+            this.dgviewCategoria.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgviewCategoria.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgviewCategoria.Location = new System.Drawing.Point(525, 113);
             this.dgviewCategoria.Name = "dgviewCategoria";
+            this.dgviewCategoria.ReadOnly = true;
             this.dgviewCategoria.RowHeadersWidth = 51;
             this.dgviewCategoria.RowTemplate.Height = 24;
+            this.dgviewCategoria.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgviewCategoria.Size = new System.Drawing.Size(766, 391);
             this.dgviewCategoria.TabIndex = 38;
+            this.dgviewCategoria.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgviewCategoria_CellContentClick);
             // 
             // label1
             // 
@@ -146,6 +151,16 @@
             this.groupBox1.Size = new System.Drawing.Size(421, 514);
             this.groupBox1.TabIndex = 36;
             this.groupBox1.TabStop = false;
+            // 
+            // lblERROR
+            // 
+            this.lblERROR.AutoSize = true;
+            this.lblERROR.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblERROR.ForeColor = System.Drawing.Color.Red;
+            this.lblERROR.Location = new System.Drawing.Point(86, 350);
+            this.lblERROR.Name = "lblERROR";
+            this.lblERROR.Size = new System.Drawing.Size(0, 32);
+            this.lblERROR.TabIndex = 58;
             // 
             // label6
             // 
@@ -212,6 +227,7 @@
             this.txtCodigoCategoria.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCodigoCategoria.Location = new System.Drawing.Point(12, 60);
             this.txtCodigoCategoria.Name = "txtCodigoCategoria";
+            this.txtCodigoCategoria.ReadOnly = true;
             this.txtCodigoCategoria.Size = new System.Drawing.Size(280, 22);
             this.txtCodigoCategoria.TabIndex = 14;
             // 
@@ -224,16 +240,6 @@
             this.label2.Size = new System.Drawing.Size(236, 32);
             this.label2.TabIndex = 13;
             this.label2.Text = "Codigo Categoria";
-            // 
-            // lblERROR
-            // 
-            this.lblERROR.AutoSize = true;
-            this.lblERROR.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblERROR.ForeColor = System.Drawing.Color.Red;
-            this.lblERROR.Location = new System.Drawing.Point(86, 350);
-            this.lblERROR.Name = "lblERROR";
-            this.lblERROR.Size = new System.Drawing.Size(0, 32);
-            this.lblERROR.TabIndex = 58;
             // 
             // Categorias
             // 

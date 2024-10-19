@@ -75,6 +75,7 @@
             this.btnEditar.TabIndex = 42;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnGuardar
             // 
@@ -258,11 +259,14 @@
             // 
             // dgviewClientes
             // 
+            this.dgviewClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgviewClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgviewClientes.Location = new System.Drawing.Point(492, 107);
             this.dgviewClientes.Name = "dgviewClientes";
+            this.dgviewClientes.ReadOnly = true;
             this.dgviewClientes.RowHeadersWidth = 51;
             this.dgviewClientes.RowTemplate.Height = 24;
+            this.dgviewClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgviewClientes.Size = new System.Drawing.Size(1054, 622);
             this.dgviewClientes.TabIndex = 38;
             this.dgviewClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgviewClientes_CellContentClick);
