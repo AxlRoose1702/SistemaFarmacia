@@ -162,8 +162,8 @@ namespace SistemaFarmacia
             txtCodigoProveedor.Text = dgviewProveedores.SelectedCells[0].Value.ToString();
             txtProveedor.Text = dgviewProveedores.SelectedCells[1].Value.ToString();
             txtNIT.Text = dgviewProveedores.SelectedCells[2].Value.ToString();
-            txtEmail.Text = dgviewProveedores.SelectedCells[3].Value.ToString();
-            txtTEL.Text = dgviewProveedores.SelectedCells[4].Value.ToString();
+            txtEmail.Text = dgviewProveedores.SelectedCells[4].Value.ToString();
+            txtTEL.Text = dgviewProveedores.SelectedCells[3].Value.ToString();
             txtDireccion.Text = dgviewProveedores.SelectedCells[5].Value.ToString();
             cboxEstado.Text = dgviewProveedores.SelectedCells[7].Value.ToString();
             dtpfecha.Text = dgviewProveedores.SelectedCells[6].Value.ToString();
