@@ -12,9 +12,9 @@ namespace SistemaFarmacia
         {
             // CONEXIONES A BASE DE DATOS (3 VERSIONES)
             InitializeComponent();
-            conn = new SqlConnection("Data Source=LAPTOP-JC6HE824;Initial Catalog=Db_farmacia;Integrated Security=True;");
+            //conn = new SqlConnection("Data Source=LAPTOP-JC6HE824;Initial Catalog=Db_farmacia;Integrated Security=True;");
             //conn = new SqlConnection("Data Source=GODLECH\\SQLEXPRESS;Initial Catalog=Db_farmacia;Integrated Security=True;");
-            //conn = new SqlConnection("server=DESKTOP-QDTQ6AS\\SQLEXPRESS; database=Db_farmacia; integrated security=true");
+            conn = new SqlConnection("server=DESKTOP-QDTQ6AS\\SQLEXPRESS; database=Db_farmacia; integrated security=true");
 
             }
 
@@ -40,7 +40,7 @@ namespace SistemaFarmacia
         private void btnGuardar_Click(object sender, EventArgs e)
         {
 
-            if (string.IsNullOrEmpty(txtCodigoCliente.Text) || string.IsNullOrEmpty(txtCliente.Text) || string.IsNullOrEmpty(txtDireccion.Text) || string.IsNullOrEmpty(txtNIT.Text) || string.IsNullOrEmpty(txtTEL.Text))
+            if (string.IsNullOrEmpty(txtCliente.Text) || string.IsNullOrEmpty(txtDireccion.Text) || string.IsNullOrEmpty(txtNIT.Text) || string.IsNullOrEmpty(txtTEL.Text))
             {
                 //Datos vacios
                 MessageBox.Show("Hay datos vacios en el formulario");

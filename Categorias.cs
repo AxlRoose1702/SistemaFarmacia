@@ -13,8 +13,8 @@ namespace SistemaFarmacia
             // CONEXIONES A BASE DE DATOS (3 VERSIONES)
             InitializeComponent();
             //conn = new SqlConnection("Data Source=LAPTOP-JC6HE824;Initial Catalog=Db_farmacia;Integrated Security=True;");
-            conn = new SqlConnection("Data Source=GODLECH\\SQLEXPRESS;Initial Catalog=Db_farmacia;Integrated Security=True;");
-            //conn = new SqlConnection("server=DESKTOP-QDTQ6AS\\SQLEXPRESS; database=Db_farmacia; integrated security=true");
+            //conn = new SqlConnection("Data Source=GODLECH\\SQLEXPRESS;Initial Catalog=Db_farmacia;Integrated Security=True;");
+            conn = new SqlConnection("server=DESKTOP-QDTQ6AS\\SQLEXPRESS; database=Db_farmacia; integrated security=true");
 
         }
 
@@ -194,6 +194,11 @@ namespace SistemaFarmacia
             DataTable dt = new DataTable();
             adapter.Fill(dt);
             dgviewCategoria.DataSource = dt;
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }
